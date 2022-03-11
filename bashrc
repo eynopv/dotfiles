@@ -112,8 +112,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
+# check if we have valid display and start x session
+if xhost >& /dev/null ; then
+  if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    exec startx
+  fi
 fi
 
 if [ -d "$HOME/bin" ] ; then
