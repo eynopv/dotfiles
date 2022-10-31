@@ -12,4 +12,6 @@ ln -sf ~/dotfiles/vimrc       ~/.vimrc
 
 ln -sf ~/dotfiles/npmrc       ~/.npmrc
 
+ln -sf ~/dotfiles/zshrc       ~/.zshrc
+
 echo "all links are created"
