@@ -10,7 +10,7 @@ ln -sf ~/dotfiles/bashrc      ~/.bashrc
 
 ln -sf ~/dotfiles/vimrc       ~/.vimrc
 
-ln -sf ~/dotfiles/npmrc       ~/.npmrc
+#ln -sf ~/dotfiles/npmrc       ~/.npmrc
 
 ln -sf ~/dotfiles/zshrc       ~/.zshrc
 
