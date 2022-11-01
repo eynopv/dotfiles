@@ -7,18 +7,27 @@ runtime! debian.vim
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" config for vim-plug
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+" config for vundle
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+"Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'evanleck/vim-svelte'
+"Plugin 'ycm-core/YouCompleteMe'
+"Plugin 'evanleck/vim-svelte'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+"call vundle#end()            " required
+"filetype plugin indent on    " required
+
+
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
