@@ -12,6 +12,9 @@ call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+let g:coc_node_path = '/home/eynopv/.nvm/versions/node/v18.12.0/bin/node'
+let g:coc_disable_startup_warning = 1
+
 " config for vundle
 " set the runtime path to include Vundle and initialize
 "set rtp+=~/.vim/bundle/Vundle.vim
