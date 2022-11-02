@@ -32,5 +32,6 @@ if [[ $use_npm -eq 1 ]]; then
 fi;
 
 ln -sf ~/dotfiles/zshrc       ~/.zshrc
+ln -sf ~/dotfiles/p10k.zsh    ~/.p10k.zsh
 
 echo "all links are created"
