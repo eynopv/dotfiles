@@ -10,6 +10,8 @@ filetype off                  " required
 " config for vim-plug
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 let g:coc_node_path = '/home/eynopv/.nvm/versions/node/v18.12.0/bin/node'
