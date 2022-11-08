@@ -16,6 +16,7 @@ call plug#end()
 
 let g:coc_node_path = '/home/eynopv/.nvm/versions/node/v18.12.0/bin/node'
 let g:coc_disable_startup_warning = 1
+let g:coc_global_extensions = [ 'coc-json', 'coc-tsserver', 'coc-pyright' ]
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
