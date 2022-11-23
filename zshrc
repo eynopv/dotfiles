@@ -120,3 +120,5 @@ nvm use node --silent
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
+
+export PATH=$PATH:$HOME/.local/bin
