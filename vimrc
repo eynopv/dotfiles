@@ -13,6 +13,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'wuelnerdotexe/vim-astro'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
