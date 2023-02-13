@@ -1,13 +1,32 @@
-
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
-runtime! debian.vim
+"runtime! debian.vim
 
+" SETTERS
+set nocompatible
+set number
+set relativenumber
+set scrolloff=8
+set textwidth=100
+set colorcolumn=+2
+set showmatch
+set visualbell
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set hlsearch
+set ignorecase
+set smartcase
 
-" config for vim-plug
+set autoindent
+set shiftwidth=4
+set tabstop=4 softtabstop=4
+set expandtab
+set smartindent
+set smarttab
+
+set backspace=indent,eol,start
+set termguicolors     " enable true colors support
+
+" PLUGINS
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'leafgarland/typescript-vim'
@@ -15,82 +34,35 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'wuelnerdotexe/vim-astro'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'rust-lang/rust.vim'
+Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
+Plug 'junegunn/fzf.vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'justinmk/vim-dirvish'
 call plug#end()
+
+let g:skip_defaults_vim = 1
 
 let g:coc_node_path = '/home/eynopv/.nvm/versions/node/v18.12.0/bin/node'
 let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = [ 'coc-json', 'coc-tsserver', 'coc-pyright', 'coc-rust-analyzer' ]
 
-" Make <CR> to accept selected completion item or notify coc.nvim to format
-" <C-g>u breaks current undo, please make your own choice.
-"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-"                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+let ayucolor="dark"
+colorscheme ayu
 
+syntax on
+
+" REMAPS
+let mapleader = " "
+nnoremap <leader>pv :Vex<CR>
+nnoremap <leader><CR> :so ~/.vimrc<CR>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>pf :Files<CR>
+nnoremap <C-j> :cnext<CR>
+nnoremap <C-k> :cprev<CR>
 " Make <TAB> to accept selected completion item or notify coc.nvim to format
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<TAB>"
 
-" config for vundle
-" set the runtime path to include Vundle and initialize
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-
-" let Vundle manage Vundle, required
-"Plugin 'VundleVim/Vundle.vim'
-
-"Plugin 'ycm-core/YouCompleteMe'
-"Plugin 'evanleck/vim-svelte'
-
-"call vundle#end()            " required
-"filetype plugin indent on    " required
-
-
-
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-
-let g:skip_defaults_vim = 1
-
-set background=dark
-
+" MISC
 " Jump to the last position when reopening a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" Uncomment the following to have Vim load indentation rules and plugins
-" according to the detected filetype.
-"filetype plugin indent on
-
-
-" Source a global configuration file if available
-"if filereadable("/etc/vim/vimrc.local")
-"  source /etc/vim/vimrc.local
-"endif
-
-" Enable mouse usage (all modes)
-"set mouse=a
-
-set number
-set linebreak
-set showbreak=++
-set textwidth=100
-set showmatch
-set visualbell
-
-set hlsearch
-set smartcase
-set ignorecase
-set incsearch
-
-set autoindent
-set expandtab
-set shiftwidth=2
-set smartindent
-set smarttab
-set softtabstop=2
-
-set ruler
-
-set backspace=indent,eol,start
-
-syntax on
-
