@@ -38,14 +38,28 @@ Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'justinmk/vim-dirvish'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 call plug#end()
 
 let g:skip_defaults_vim = 1
 
+" coc configs
 let g:coc_node_path = '/home/eynopv/.nvm/versions/node/v18.12.0/bin/node'
 let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = [ 'coc-json', 'coc-tsserver', 'coc-pyright', 'coc-rust-analyzer' ]
 
+" use darvish for explore
+let g:loaded_netrwPlugin = 1
+command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
+command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
+
+" prettier config
+let g:prettier#autoformat_config_present = 1
+let g:prettier#autoformat_require_pragma = 0
+
+" theme config
 let ayucolor="dark"
 colorscheme ayu
 
@@ -59,6 +73,9 @@ nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>pf :Files<CR>
 nnoremap <C-j> :cnext<CR>
 nnoremap <C-k> :cprev<CR>
+" yank into system clipboard
+vnoremap <C-y> "+y
+nnoremap <C-y> "+y
 " Make <TAB> to accept selected completion item or notify coc.nvim to format
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<TAB>"
