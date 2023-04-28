@@ -29,6 +29,7 @@ set termguicolors     " enable true colors support
 " PLUGINS
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'hashivim/vim-terraform'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'wuelnerdotexe/vim-astro'
@@ -40,7 +41,7 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+  \ 'for': ['javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 call plug#end()
 
 let g:skip_defaults_vim = 1
@@ -57,6 +58,7 @@ command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args
 
 " prettier config
 let g:prettier#autoformat_config_present = 1
+let g:prettier#autoformat_config_files = [ ".prettierrc", "prettier.config.js" ]
 let g:prettier#autoformat_require_pragma = 0
 
 " theme config
