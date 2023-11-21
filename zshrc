@@ -117,15 +117,11 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm use node --silent
 
-alias vim="nvim"
-alias vi="nvim"
-alias v="nvim"
-
 export PATH=$PATH:$HOME/.local/bin
 
 export PATH=$PATH:/usr/share/go/bin
 
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH=$PATH:$JAVA_HOME/bin
 
 export ANDROID_HOME=$HOME/Android
@@ -135,4 +131,31 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
 export ADB_SERVER_SOCKET=tcp:$WSL_HOST:5037
-export REACT_NATIVE_PACKAGER_HOSTNAME=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+#export REACT_NATIVE_PACKAGER_HOSTNAME=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+
+export PATH=$PATH:$HOME/.local/bin/zig/zig-0.11.0-dev
+
+export PATH=$PATH:$HOME/.local/bin/nvim/bin
+alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/eynopv/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/eynopv/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/eynopv/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/eynopv/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# Turso
+export PATH="/home/eynopv/.turso:$PATH"
