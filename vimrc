@@ -26,8 +26,11 @@ set smarttab
 set backspace=indent,eol,start
 set termguicolors     " enable true colors support
 
+let g:python3_host_prog = $HOME . '/miniconda3/bin/python3'
+
 " PLUGINS
 call plug#begin()
+Plug 'editorconfig/editorconfig-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'hashivim/vim-terraform'
 Plug 'leafgarland/typescript-vim'
@@ -38,7 +41,11 @@ Plug 'rust-lang/rust.vim'
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
 Plug 'ayu-theme/ayu-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox', { 'as': 'gruvbox' }
 Plug 'justinmk/vim-dirvish'
+Plug 'ziglang/zig.vim'
+Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install --frozen-lockfile --production',
   \ 'for': [
@@ -52,6 +59,7 @@ Plug 'prettier/vim-prettier', {
       \ 'json',
       \ 'graphql',
       \ 'markdown',
+      \ 'astro',
       \ 'vue',
       \ 'svelte',
       \ 'yaml',
@@ -63,7 +71,15 @@ let g:skip_defaults_vim = 1
 " coc configs
 let g:coc_node_path = '/home/eynopv/.nvm/versions/node/v18.12.0/bin/node'
 let g:coc_disable_startup_warning = 1
-let g:coc_global_extensions = [ 'coc-eslint', 'coc-json', 'coc-tsserver', 'coc-pyright', 'coc-rust-analyzer' ]
+let g:coc_global_extensions = [
+            \ 'coc-eslint',
+            \ 'coc-json',
+            \ 'coc-tsserver',
+            \ 'coc-rust-analyzer',
+            \ 'coc-java',
+            \ 'coc-zls',
+            \ 'coc-go',
+            \ 'coc-pyright']
 
 " use darvish for explore
 let g:loaded_netrwPlugin = 1
@@ -77,7 +93,9 @@ let g:prettier#autoformat_require_pragma = 0
 
 " theme config
 let ayucolor="dark"
-colorscheme ayu
+"colorscheme ayu
+"colorscheme dracula
+colorscheme gruvbox
 
 syntax on
 
