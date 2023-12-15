@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm z zsh-autosuggestions)
+plugins=(git z zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,12 +110,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-nvm use node --silent
 
 export PATH=$PATH:$HOME/.local/bin
 
@@ -159,3 +153,11 @@ unset __conda_setup
 
 # Turso
 export PATH="/home/eynopv/.turso:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/eynopv/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

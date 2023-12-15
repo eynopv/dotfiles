@@ -69,7 +69,7 @@ call plug#end()
 let g:skip_defaults_vim = 1
 
 " coc configs
-let g:coc_node_path = '/home/eynopv/.nvm/versions/node/v18.12.0/bin/node'
+let g:coc_node_path = '/home/eynopv/.local/share/pnpm/node'
 let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = [
             \ 'coc-eslint',
@@ -88,8 +88,13 @@ command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args
 
 " prettier config
 let g:prettier#autoformat_config_present = 1
-let g:prettier#autoformat_config_files = [ ".prettierrc", "prettier.config.js", "prettier.config.cjs" ]
+let g:prettier#autoformat_config_files = [
+            \ ".prettierrc",
+            \ ".prettierrc.json",
+            \ "prettier.config.js",
+            \ "prettier.config.cjs"]
 let g:prettier#autoformat_require_pragma = 0
+let g:prettier#config#config_precedence = 'prefer-file'
 
 " theme config
 let ayucolor="dark"
