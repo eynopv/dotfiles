@@ -26,6 +26,7 @@ ln -sf ~/dotfiles/bashrc      ~/.bashrc
 
 ln -sf ~/dotfiles/vimrc           ~/.vimrc
 ln -sf ~/dotfiles/neovim.init.vim ~/.config/nvim/init.vim
+ln -sf ~/dotfiles/coc-settings.json ~/.config/nvim/coc-settings.json
 
 if [[ $use_npm -eq 1 ]]; then
   ln -sf ~/dotfiles/npmrc       ~/.npmrc
