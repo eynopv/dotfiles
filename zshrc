@@ -113,7 +113,8 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:$HOME/.local/bin
 
-export PATH=$PATH:/usr/share/go/bin
+# Golang
+export PATH=$PATH:/usr/local/go/bin
 
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH=$PATH:$JAVA_HOME/bin
@@ -133,6 +134,9 @@ export PATH=$PATH:$HOME/.local/bin/nvim/bin
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
+
+# Nitor NDT
+eval "$(nameless-dt-register-complete --nep-function)"
 
 
 # >>> conda initialize >>>
@@ -161,3 +165,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+export PATH="/home/eynopv/.local/share/pnpm/nodejs/21.4.0/bin:$PATH"
