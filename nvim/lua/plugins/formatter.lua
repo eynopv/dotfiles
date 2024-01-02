@@ -12,6 +12,22 @@ require("formatter").setup {
     -- Formatter configurations for filetype "lua" go here
     -- and will be executed in order
 
+    javascriptreact = {
+      require("formatter.filetypes.javascriptreact").prettier,
+    },
+
+    typescriptreact = {
+      require("formatter.filetypes.typescriptreact").prettier,
+    },
+
+    typescript = {
+      require("formatter.filetypes.typescript").prettier,
+    },
+
+    javascript = {
+      require("formatter.filetypes.javascript").prettier,
+    },
+
     svelte = {
       require("formatter.filetypes.svelte").prettier,
     },
