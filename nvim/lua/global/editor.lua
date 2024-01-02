@@ -1,28 +1,28 @@
-vim.opt.compatible = false
 vim.opt.number = true
-vim.cmd([[
-"set nocompatible
-"set number
-set relativenumber
-set scrolloff=8
-set textwidth=100
-set colorcolumn=+2
-set showmatch
-set visualbell
+vim.opt.relativenumber = true
+vim.opt.visualbell = true
 
-set hlsearch
-set ignorecase
-set smartcase
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
 
-set autoindent
-set shiftwidth=4
-set tabstop=4 softtabstop=4
-set expandtab
-set smartindent
-set smarttab
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
-set backspace=indent,eol,start
-set termguicolors     " enable true colors support
-]])
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+
+vim.opt.updatetime = 50
+
+vim.opt.wrap = true
+vim.opt.textwidth = 120
+vim.opt.colorcolumn = "80"
+
+vim.opt.backspace = "indent,eol,start"
+
+vim.opt.termguicolors = true
 
 vim.cmd.colorscheme("gruvbox")
