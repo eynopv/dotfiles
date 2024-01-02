@@ -1,15 +1,8 @@
 vim.cmd([[
 call plug#begin()
 
-Plug 'editorconfig/editorconfig-vim'
-Plug 'hashivim/vim-terraform'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'wuelnerdotexe/vim-astro'
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
-Plug 'rust-lang/rust.vim'
-Plug 'ziglang/zig.vim'
-Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
+" Syntax highlights
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Formatter
 Plug 'mhartington/formatter.nvim'

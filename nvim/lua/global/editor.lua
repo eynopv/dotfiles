@@ -1,6 +1,8 @@
+vim.opt.compatible = false
+vim.opt.number = true
 vim.cmd([[
-set nocompatible
-set number
+"set nocompatible
+"set number
 set relativenumber
 set scrolloff=8
 set textwidth=100
@@ -22,3 +24,5 @@ set smarttab
 set backspace=indent,eol,start
 set termguicolors     " enable true colors support
 ]])
+
+vim.cmd.colorscheme("gruvbox")
