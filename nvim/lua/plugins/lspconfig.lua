@@ -1,5 +1,6 @@
-local lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
-lspconfig.tsserver.setup {}
-lspconfig.svelte.setup {}
-lspconfig.eslint.setup {}
+local lspconfig = require("lspconfig")
+lspconfig.pyright.setup({})
+lspconfig.tsserver.setup({})
+lspconfig.svelte.setup({})
+lspconfig.eslint.setup({})
+lspconfig.gopls.setup({})

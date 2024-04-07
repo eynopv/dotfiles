@@ -15,9 +15,9 @@ Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
 
 " Color Schemes
-Plug 'ayu-theme/ayu-vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'morhetz/gruvbox', { 'as': 'gruvbox' }
+Plug 'Shatur/neovim-ayu'
+Plug 'Mofiqul/dracula.nvim'
+Plug 'ellisonleao/gruvbox.nvim'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'

@@ -1,7 +1,3 @@
-vim.cmd([[
-let g:python3_host_prog = $HOME . '/miniconda3/bin/python3'
-]])
-
 require("plugins.plug")
 require("plugins.lspconfig")
 require("plugins.nvim-cmp")

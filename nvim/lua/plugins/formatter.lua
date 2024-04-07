@@ -7,6 +7,10 @@ require("formatter").setup({
 	log_level = vim.log.levels.DEBUG,
 
 	filetype = {
+		go = {
+			require("formatter.filetypes.go").gofmt,
+		},
+
 		javascriptreact = {
 			require("formatter.filetypes.javascriptreact").prettier,
 		},
@@ -45,6 +49,22 @@ require("formatter").setup({
 
 		lua = {
 			require("formatter.filetypes.lua").stylua,
+		},
+
+		css = {
+			require("formatter.filetypes.css").prettier,
+		},
+
+		html = {
+			require("formatter.filetypes.html").prettier,
+		},
+
+		yaml = {
+			require("formatter.filetypes.yaml").prettier,
+		},
+
+		terraform = {
+			require("formatter.filetypes.terraform").terraformfmt,
 		},
 
 		--["*"] = {

@@ -115,6 +115,7 @@ export PATH=$PATH:$HOME/.local/bin
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH=$PATH:$JAVA_HOME/bin
@@ -124,8 +125,8 @@ export ANDROID_SDK_ROOT=$HOME/Android
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
-export ADB_SERVER_SOCKET=tcp:$WSL_HOST:5037
+#export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
+#export ADB_SERVER_SOCKET=tcp:$WSL_HOST:5037
 #export REACT_NATIVE_PACKAGER_HOSTNAME=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 
 export PATH=$PATH:$HOME/.local/bin/zig/zig-0.11.0-dev
@@ -148,8 +149,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+alias pn="pnpm"
 
-export PATH="/home/eynopv/.local/share/pnpm/nodejs/21.4.0/bin:$PATH"
+#export PATH="/home/eynopv/.local/share/pnpm/nodejs/21.4.0/bin:$PATH"
 
 
 # pyenv
