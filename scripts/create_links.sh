@@ -21,8 +21,8 @@ if [[ $use_x -eq 1 ]]; then
   ln -sf ~/dotfiles/xserverrc   ~/.xserverrc
 fi
 
-ln -sf ~/dotfiles/profile     ~/.profile
-ln -sf ~/dotfiles/bashrc      ~/.bashrc
+#ln -sf ~/dotfiles/profile     ~/.profile
+#ln -sf ~/dotfiles/bashrc      ~/.bashrc
 
 ln -sf ~/dotfiles/nvim ~/.config
 
