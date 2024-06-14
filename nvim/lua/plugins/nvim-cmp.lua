@@ -1,16 +1,14 @@
--- Set up nvim-cmp.
 local cmp = require("cmp")
 
 cmp.setup({
 	snippet = {
-		-- REQUIRED - you must specify a snippet engine
 		expand = function(args)
 			vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
 		end,
 	},
 	window = {
-		-- completion = cmp.config.window.bordered(),
-		-- documentation = cmp.config.window.bordered(),
+		--completion = cmp.config.window.bordered(),
+		--documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -21,20 +19,17 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
-		{ name = "vsnip" }, -- For vsnip users.
-		{ name = "path" },
+		{ name = "vsnip" },
+		--{ name = "path" },
 	}, {
 		{ name = "buffer" },
 	}),
-})
-
--- Set configuration for specific filetype.
-cmp.setup.filetype("gitcommit", {
-	sources = cmp.config.sources({
-		{ name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
-	}, {
-		{ name = "buffer" },
-	}),
+	formatting = {
+		format = function(_, vim_item)
+			vim_item.dup = { buffer = 1, path = 1, nvim_lsp = 1 } -- take care of duplicates
+			return vim_item
+		end,
+	},
 })
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
@@ -53,20 +48,7 @@ cmp.setup.cmdline(":", {
 	}, {
 		{ name = "cmdline" },
 	}),
+	matching = { disallow_symbol_nonprefix_matching = false },
 })
 
--- Set up lspconfig.
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require("lspconfig")["svelte"].setup({
-	capabilities = capabilities,
-})
-
-require("lspconfig")["tsserver"].setup({
-	capabilities = capabilities,
-})
-
-require("lspconfig")["pyright"].setup({
-	capabilities = capabilities,
-})
+-- Capabilities are set in lspconfig
