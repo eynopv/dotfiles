@@ -35,7 +35,9 @@ lspconfig.tsserver.setup({
 	capabilities = capabilities,
 })
 
---lspconfig.svelte.setup({})
+lspconfig.svelte.setup({
+	capabilities = capabilities,
+})
 --lspconfig.eslint.setup({})
 lspconfig.gopls.setup({
 	capabilities = capabilities,
