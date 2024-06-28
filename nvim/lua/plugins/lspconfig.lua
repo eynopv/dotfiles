@@ -42,3 +42,7 @@ lspconfig.svelte.setup({
 lspconfig.gopls.setup({
 	capabilities = capabilities,
 })
+
+lspconfig.zls.setup({
+	capabilities = capabilities,
+})
