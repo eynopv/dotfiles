@@ -34,7 +34,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 #export REACT_NATIVE_PACKAGER_HOSTNAME=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 
 # zig
-export PATH=$PATH:$HOME/.local/bin/zig/zig-0.11.0-dev
+export PATH=$PATH:$HOME/.local/bin/zig/zig-linux-x86_64-0.13.0
 
 # neovim
 export PATH=$PATH:$HOME/.local/bin/nvim/bin
