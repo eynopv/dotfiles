@@ -46,3 +46,7 @@ lspconfig.gopls.setup({
 lspconfig.zls.setup({
 	capabilities = capabilities,
 })
+
+lspconfig.jsonls.setup({
+	capabilities = capabilities,
+})
