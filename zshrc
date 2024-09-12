@@ -4,8 +4,9 @@ export PATH=$PATH:$FZF_BASE/bin
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="simple"
+#ZSH_TMUX_AUTOSTART=true
 
-plugins=(z fzf zsh-autosuggestions)
+plugins=(z fzf zsh-autosuggestions tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -65,3 +66,16 @@ eval "$(pyenv virtualenv-init -)"
 
 # notes
 alias notes="(cd ~/gnotes/notes; vim .)"
+
+# bun completions
+[ -s "/home/eynopv/.bun/_bun" ] && source "/home/eynopv/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# kubectl completion
+source <(kubectl completion zsh)
+
+# lualsp
+export PATH="/home/eynopv/.local/bin/lualsp/bin:$PATH"
