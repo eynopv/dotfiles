@@ -17,3 +17,10 @@ dependencies and is not tracked in version control.
 
 Any local changes should be stored in `zhrc.local` and any global in `zhrc` to share them between
 devices.
+
+## Font
+
+ZSH themes require extra fonts to display correctly.
+
+Current font I use is
+[MesloLGS](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Meslo.zip)
