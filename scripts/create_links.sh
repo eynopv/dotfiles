@@ -24,7 +24,8 @@ fi
 #ln -sf ~/dotfiles/profile     ~/.profile
 #ln -sf ~/dotfiles/bashrc      ~/.bashrc
 
-ln -sf ~/dotfiles/nvim ~/.config
+mkdir ~/.config
+ln -sf ~/dotfiles/nvim ~/.config/nvim
 
 if [[ $use_npm -eq 1 ]]; then
   ln -sf ~/dotfiles/npmrc       ~/.npmrc

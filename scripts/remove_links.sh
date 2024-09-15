@@ -14,4 +14,6 @@ rm ~/.npmrc
 
 rm ~/.zshrc
 
+rm ~/.config/nvim
+
 echo "all links are removed"
