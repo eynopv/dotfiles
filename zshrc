@@ -2,29 +2,24 @@
 
 # Define variables for my zsh configurations
 export ZSHRC_DIR="$(dirname "$(readlink -f "${(%):-%N}")")"
+export ZSHRC_MAIN="$ZSHRC_DIR/zshrc"
+export ZSHRC_GLOBAL="$ZSHRC_DIR/zshrc.global"
 export ZSHRC_LOCAL="$ZSHRC_DIR/zshrc.local"
-export ZSHRC_GLOBAL="$ZSHRC_DIR/zshrc"
 
-# Setup oh-my-zsh
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="simple"
-plugins=(z fzf zsh-autosuggestions)
-source $ZSH/oh-my-zsh.sh
-
-# Local binaries
-export PATH=$PATH:$HOME/.local/bin
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  if command -v neovim > /dev/null 2>&1; then
-    export EDITOR="neovim"
-  elif command -v vim > /dev/null 2>&1; then
-    export EDITOR="vim"
-  else
-    export EDITOR="vi"
+# Only run if in an interactive shell and only once
+if [[ $- == *i* ]]; then
+  if [[ -z "$ZSHRC_UPDATES_PULLED" ]]; then
+    if git -C $ZSHRC_DIR diff-index --quiet HEAD --; then
+      git -C $ZSHRC_DIR pull || echo "dotfiles: Unable to pull updates..."
+    else
+      echo "dotfiles: Please commit local changes..."
+    fi
+    export ZSHRC_UPDATES_PULLED=1
   fi
+fi
+
+if [ -f "$ZSHRC_GLOBAL" ]; then
+  source "$ZSHRC_GLOBAL"
 fi
 
 if [ -f "$ZSHRC_LOCAL" ]; then

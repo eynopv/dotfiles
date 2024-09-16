@@ -12,11 +12,12 @@ This repository contains my `.zshrc` file and scripts to setup tools.
 
 ## zshrc
 
-Main `.zshrc` file is `zhrc`, this file imports `zhrc.local` which is responsible for local
-dependencies and is not tracked in version control.
+`zshrc` is responsible for auto-update and import of other files.
 
-Any local changes should be stored in `zhrc.local` and any global in `zhrc` to share them between
-devices.
+`zshrc.main` includes everything what should be shared between all devices.
+
+`zshrc.local` includes only local stuff and should not be tracked in version control. All
+installation scripts use this file.
 
 ## Font
 
