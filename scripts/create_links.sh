@@ -21,9 +21,6 @@ if [[ $use_x -eq 1 ]]; then
   ln -sf ~/dotfiles/xserverrc   ~/.xserverrc
 fi
 
-#ln -sf ~/dotfiles/profile     ~/.profile
-#ln -sf ~/dotfiles/bashrc      ~/.bashrc
-
 mkdir ~/.config
 ln -sf ~/dotfiles/nvim ~/.config/nvim
 
@@ -31,7 +28,8 @@ if [[ $use_npm -eq 1 ]]; then
   ln -sf ~/dotfiles/npmrc       ~/.npmrc
 fi;
 
-ln -sf ~/dotfiles/zshrc       ~/.zshrc
-ln -sf ~/dotfiles/p10k.zsh    ~/.p10k.zsh
+ln -sf ~/dotfiles/zshrc        ~/.zshrc
+ln -sf ~/dotfiles/tmux.conf    ~/.tmux.conf
+
 
 echo "all links are created"
