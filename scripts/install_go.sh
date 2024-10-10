@@ -4,7 +4,7 @@ echo "Removing old"
 rm -rf ~/.local/share/go
 
 echo "Downloading go"
-curl -L https://go.dev/dl/go1.23.1.linux-amd64.tar.gz | tar -xz -C ~/.local/share
+curl -L https://go.dev/dl/go1.23.2.linux-amd64.tar.gz | tar -xz -C ~/.local/share
 
 echo "Installing gopls"
 ~/.local/share/go/bin/go install golang.org/x/tools/gopls@latest
