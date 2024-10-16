@@ -1,5 +1,3 @@
-local util = require("formatter.util")
-
 require("formatter").setup({
 	logging = true,
 	log_level = vim.log.levels.DEBUG,
@@ -42,7 +40,15 @@ require("formatter").setup({
 		},
 
 		python = {
-			require("formatter.filetypes.python").black,
+			function()
+				-- Use ruff if available in project
+				if vim.fn.executable("ruff") == 1 then
+					return require("formatter.filetypes.python").ruff()
+				end
+
+				-- Fallback to black as my default
+				return require("formatter.filetypes.python").black()
+			end,
 		},
 
 		lua = {
