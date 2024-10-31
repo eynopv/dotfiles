@@ -1,3 +1,5 @@
+local util = require("formatter.util")
+
 require("formatter").setup({
 	logging = true,
 	log_level = vim.log.levels.DEBUG,
@@ -36,7 +38,23 @@ require("formatter").setup({
 		},
 
 		markdown = {
-			require("formatter.filetypes.markdown").prettier,
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						util.escape_path(util.get_current_buffer_file_path()),
+						"--config-precedence",
+						"prefer-file",
+						"--prose-wrap",
+						"always",
+						"--print-width",
+						"100",
+					},
+					stdin = true,
+					try_node_modules = true,
+				}
+			end,
 		},
 
 		python = {
