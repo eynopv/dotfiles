@@ -13,6 +13,7 @@ if [[ $- == *i* ]]; then
       git -C $ZSHRC_DIR pull || echo "dotfiles: Unable to pull updates..."
     else
       echo "dotfiles: Please commit local changes..."
+      sleep 1
     fi
     export ZSHRC_UPDATES_PULLED=1
   fi
