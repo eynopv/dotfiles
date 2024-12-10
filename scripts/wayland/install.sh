@@ -5,4 +5,5 @@ sudo apt-get install sway \
  wl-clipboard \
  grim \
  slurp \
- pulseaudio-utils
+ pulseaudio-utils \
+ blueman
