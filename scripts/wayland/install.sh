@@ -4,4 +4,5 @@ sudo apt-get install sway \
  waybar \
  wl-clipboard \
  grim \
- slurp
+ slurp \
+ pulseaudio-utils
