@@ -38,10 +38,11 @@ lspconfig.ts_ls.setup({
 lspconfig.svelte.setup({
 	capabilities = capabilities,
 })
---lspconfig.eslint.setup({})
---lspconfig.gopls.setup({
---	capabilities = capabilities,
---})
+
+lspconfig.eslint.setup({})
+lspconfig.gopls.setup({
+	capabilities = capabilities,
+})
 
 lspconfig.zls.setup({
 	capabilities = capabilities,
