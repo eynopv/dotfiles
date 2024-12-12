@@ -6,4 +6,8 @@ sudo apt-get install sway \
  grim \
  slurp \
  pulseaudio-utils \
- blueman
+ blueman \
+ brightnessctl
+
+# Add permission for brightnessctl
+sudo usermod -a -G video ${USER}
