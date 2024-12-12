@@ -89,9 +89,9 @@ require("formatter").setup({
 			require("formatter.filetypes.terraform").terraformfmt,
 		},
 
-		["*"] = {
-			require("formatter.filetypes.any").remove_trailing_whitespace,
-		},
+		--["*"] = {
+		--	require("formatter.filetypes.any").remove_trailing_whitespace,
+		--},
 	},
 })
 
