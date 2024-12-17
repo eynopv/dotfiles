@@ -1,11 +1,13 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get install build-essential
-sudo apt-get install fzf
-sudo apt-get install zsh
-sudo apt-get install curl
-sudo apt-get install neofetch
+sudo apt-get install \
+  build-essential \
+  fzf \
+  zsh \
+  curl \
+  neofetch \
+  htop
 
 # set login shell to zsh
 chsh -s $(which zsh)
