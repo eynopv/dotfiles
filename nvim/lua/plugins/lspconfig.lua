@@ -39,7 +39,10 @@ lspconfig.svelte.setup({
 	capabilities = capabilities,
 })
 
-lspconfig.eslint.setup({})
+lspconfig.eslint.setup({
+	capabilities = capabilities,
+})
+
 lspconfig.gopls.setup({
 	capabilities = capabilities,
 })
