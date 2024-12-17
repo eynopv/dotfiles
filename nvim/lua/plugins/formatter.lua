@@ -85,6 +85,10 @@ require("formatter").setup({
 			require("formatter.filetypes.yaml").prettier,
 		},
 
+		graphql = {
+			require("formatter.filetypes.graphql").prettier,
+		},
+
 		terraform = {
 			require("formatter.filetypes.terraform").terraformfmt,
 		},
