@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>d", ":Dirvish<CR>")
-vim.keymap.set("n", "<leader>j", "<Plug>(dirvish_up)")
+vim.keymap.set("n", "<leader>d", "<CMD>Oil<CR>")
+vim.keymap.set("n", "<leader>j", "<CMD>Oil<CR>")
 
 vim.keymap.set("n", "<leader>pv", ":Vex<CR>")
 vim.keymap.set("n", "<C-p>", ":GFiles<CR>")

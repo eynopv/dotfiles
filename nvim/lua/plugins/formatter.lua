@@ -104,5 +104,9 @@ local autocmd = vim.api.nvim_create_autocmd
 augroup("__formatter__", { clear = true })
 autocmd("BufWritePost", {
 	group = "__formatter__",
-	command = ":FormatWrite",
+	callback = function()
+		if vim.bo.filetype ~= "oil" then
+			vim.cmd("FormatWrite")
+		end
+	end,
 })

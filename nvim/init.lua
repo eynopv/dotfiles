@@ -3,7 +3,10 @@ require("plugins.lspconfig")
 require("plugins.nvim-cmp")
 require("plugins.formatter")
 require("plugins.treesitter")
-require("plugins.dirvish")
+--require("plugins.dirvish")
+require("plugins.oil")
+require("plugins.nvim_web_devicons")
+require("plugins.mini_icons")
 
 require("global.editor")
 require("global.remap")
@@ -17,5 +20,5 @@ vim.cmd([[
 -- maybe I should use pnpx command instead of just prettier
 local root_node_bin = vim.fn.getcwd() .. "/node_modules/.bin"
 if vim.fn.isdirectory(root_node_bin) == 1 then
-    vim.env.PATH = root_node_bin .. ":" .. vim.env.PATH
+	vim.env.PATH = root_node_bin .. ":" .. vim.env.PATH
 end
