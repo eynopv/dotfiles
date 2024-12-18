@@ -5,7 +5,6 @@ require("plugins.formatter")
 require("plugins.treesitter")
 --require("plugins.dirvish")
 require("plugins.oil")
-require("plugins.nvim_web_devicons")
 require("plugins.mini_icons")
 
 require("global.editor")

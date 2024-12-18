@@ -10,8 +10,7 @@ Plug 'mhartington/formatter.nvim'
 " Navigator
 Plug 'justinmk/vim-dirvish'
 Plug 'stevearc/oil.nvim'
-Plug 'echasnovski/mini.nvim', { 'branch': 'stable' }
-Plug 'nvim-tree/nvim-web-devicons'
+Plug 'echasnovski/mini.nvim', { 'branch': 'main' }
 
 " Fuzzy finder
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
