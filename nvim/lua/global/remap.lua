@@ -6,6 +6,7 @@ vim.keymap.set("n", "<leader>j", "<CMD>Oil<CR>")
 vim.keymap.set("n", "<leader>pv", ":Vex<CR>")
 vim.keymap.set("n", "<C-p>", ":GFiles<CR>")
 vim.keymap.set("n", "<C-f>", ":Files<CR>")
+vim.keymap.set("n", "<C-b>", ":Buffers<CR>")
 vim.keymap.set("n", "<C-j>", ":cnext<CR>")
 vim.keymap.set("n", "<C-k>", ":cprev<CR>")
 
