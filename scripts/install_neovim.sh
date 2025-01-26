@@ -26,3 +26,4 @@ mkdir -p ~/.local/share/lua-ls && curl -L https://github.com/LuaLS/lua-language-
 # Requires PNPM preinstalled
 pnpm install -g typescript typescript-language-server
 pnpm install -g vscode-langservers-extracted
+pnpm install -g @tailwindcss/language-server

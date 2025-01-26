@@ -107,3 +107,7 @@ lspconfig.rust_analyzer.setup({
 lspconfig.terraformls.setup({
 	capabilities = capabilities,
 })
+
+lspconfig.tailwindcss.setup({
+	capabilities = capabilities,
+})
