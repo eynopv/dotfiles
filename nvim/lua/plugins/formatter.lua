@@ -37,6 +37,10 @@ require("formatter").setup({
 			require("formatter.filetypes.json").prettier,
 		},
 
+		xml = {
+			require("formatter.filetypes.xml").xmllint,
+		},
+
 		markdown = {
 			function()
 				return {
