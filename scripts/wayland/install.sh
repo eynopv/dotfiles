@@ -7,7 +7,10 @@ sudo apt-get install sway \
  slurp \
  pulseaudio-utils \
  blueman \
- brightnessctl
+ brightnessctl \
+ xdg-desktop-portal \
+ xdg-desktop-portal-wlr \
+ swayidle
 
 # Add permission for brightnessctl
 sudo usermod -a -G video ${USER}
