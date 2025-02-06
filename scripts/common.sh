@@ -23,3 +23,23 @@ add_block_to_local_zshrc() {
     echo "# @$block_name end"
   } >> $ZSHRC_LOCAL
 }
+
+create_symlink() {
+  local source="$1"
+  local destination="$2"
+
+  # Remove already existing symlink
+  if [ -L "$destination" ]; then
+    rm -rf "$destination"
+  fi
+
+  ln -s "$source" "$destination"
+}
+
+remove_symlink() {
+  local $symlink="$1"
+
+  if [ -L "$symlink" ]; then
+    rm "$symlink"
+  fi
+}

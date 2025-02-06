@@ -2,6 +2,8 @@
 
 set -eo pipefail
 
+source ../common.sh
+
 echo "Uninstalling"
 
 sudo apt-get remove sway \
@@ -21,7 +23,7 @@ sudo usermod -r -G video ${USER}
 
 # Remove config symlinks
 echo "Removing symlinks"
-rm -r ~/.config/sway
-rm -r ~/.config/waybar
+remove_symlink ~/.config/sway
+remove_symlink ~/.config/waybar
 
 echo "Done"
