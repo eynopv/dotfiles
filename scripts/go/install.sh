@@ -5,7 +5,7 @@ source ../common.sh
 echo "Installing go"
 
 echo "Downloading go"
-curl -L https://go.dev/dl/go1.23.3.linux-amd64.tar.gz | tar -xz -C ~/.local/share || exit 1
+curl -L https://go.dev/dl/go1.24.0.linux-amd64.tar.gz | tar -xz -C ~/.local/share || exit 1
 
 echo "Installing gopls"
 ~/.local/share/go/bin/go install golang.org/x/tools/gopls@latest
