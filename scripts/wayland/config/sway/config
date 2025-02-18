@@ -4,9 +4,6 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-# Add borders around windows
-gaps inner 2
-
 # Remove title bar
 default_border pixel 2
 
