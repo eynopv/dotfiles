@@ -30,4 +30,10 @@ mkdir -p ~/.config
 create_symlink $SCRIPT_DIR/config/sway ~/.config/sway
 create_symlink $SCRIPT_DIR/config/waybar ~/.config/waybar
 
+if ! has_block_in_zshrc "wayland"; then
+  add_block_to_local_zshrc "wayland" \
+    "alias sst=\"/usr/libexec/xdg-desktop-portal -r & /usr/libexec/xdg-desktop-portal-wlr -r & echo 'Screen sharing started'\"" \
+    "alias ssp=\"pkill -f xdg-desktop-portal; pkill -f xdg-desktop-portal-wlr; echo 'Screen sharing stopped'\""
+fi
+
 echo "Done"
