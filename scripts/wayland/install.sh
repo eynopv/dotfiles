@@ -18,7 +18,8 @@ sudo apt-get install sway \
  brightnessctl \
  xdg-desktop-portal \
  xdg-desktop-portal-wlr \
- swayidle
+ swayidle \
+ fuzzel
 
 # Add permission for brightnessctl
 echo "Adding permissions"
@@ -29,6 +30,7 @@ echo "Creating symlinks"
 mkdir -p ~/.config
 create_symlink $SCRIPT_DIR/config/sway ~/.config/sway
 create_symlink $SCRIPT_DIR/config/waybar ~/.config/waybar
+create_symlink $SCRIPT_DIR/config/fuzzel ~/.config/fuzzel
 
 if ! has_block_in_zshrc "wayland"; then
   add_block_to_local_zshrc "wayland" \
