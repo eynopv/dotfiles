@@ -65,7 +65,9 @@ exec swayidle -w \
 ### Key bindings
 
 # Take screenshot into clipboard
-    bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
+    #bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
+    set $screenshotman exec bash ~/.config/sway/screenshotman.sh
+    bindsym $mod+p $screenshotman
 
 # Manual screen lock:
     set $lockman exec bash ~/.config/sway/lockman.sh
