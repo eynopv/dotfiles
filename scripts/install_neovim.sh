@@ -2,7 +2,7 @@
 
 mkdir -p ~/.local/share/nvim
 
-curl -L https://github.com/neovim/neovim/releases/download/v0.10.3/nvim-linux64.tar.gz | tar -xz -C ~/.local/share/nvim
+curl -L https://github.com/neovim/neovim/releases/download/v0.10.4/nvim-linux-x86_64.tar.gz | tar -xz -C ~/.local/share/nvim
 
 # plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -11,7 +11,7 @@ if ! grep -Fq "# neovim start" "$ZSHRC_LOCAL"; then
   echo "Adding neovim to zshrc"
   echo "" >> $ZSHRC_LOCAL
   echo "# neovim start" >> $ZSHRC_LOCAL
-  echo -e "export PATH=\$HOME/.local/share/nvim/nvim-linux64/bin:\$PATH" >> $ZSHRC_LOCAL
+  echo -e "export PATH=\$HOME/.local/share/nvim/nvim-linux-x86_64/bin:\$PATH" >> $ZSHRC_LOCAL
   echo -e "export PATH=\$HOME/.local/share/lua-ls/bin:\$PATH" >> $ZSHRC_LOCAL
   echo 'alias vim="nvim"' >> $ZSHRC_LOCAL
   echo 'alias vi="nvim"' >> $ZSHRC_LOCAL
