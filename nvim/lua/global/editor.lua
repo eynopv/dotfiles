@@ -7,6 +7,7 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.opt.smartindent = false -- automatically indents new lines based on syntax (mainly for C-like languages)
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
