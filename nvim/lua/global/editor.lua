@@ -25,3 +25,8 @@ vim.opt.backspace = "indent,eol,start"
 vim.opt.termguicolors = true
 
 vim.cmd.colorscheme("gruvbox")
+
+-- diagnostic
+vim.diagnostic.config({
+	virtual_text = true,
+})
