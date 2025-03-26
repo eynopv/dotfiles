@@ -2,11 +2,10 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.visualbell = true
 
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.expandtab = true
-vim.opt.smartindent = true
+vim.opt.tabstop = 2 -- display tabs as 2 spaces
+vim.opt.shiftwidth = 2 -- indent with 2 spaces
+vim.opt.softtabstop = 2 -- backspace treats 2 spaces as tab
+vim.opt.expandtab = true -- use spaces instead of tabs
 vim.opt.smartindent = false -- automatically indents new lines based on syntax (mainly for C-like languages)
 
 vim.opt.hlsearch = false
