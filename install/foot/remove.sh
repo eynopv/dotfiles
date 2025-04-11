@@ -2,6 +2,10 @@
 
 set -eo pipefail
 
+source ../common.sh
+
+echo "Uninstalling: foot"
+
 sudo apt remove foot foot-themes
 
-rm -r ~/.cofig/foot
+remove_symlink ~/.cofig/foot
