@@ -1,0 +1,3 @@
+[submodule "install/wayland/config/sway/sway-zoomer"]
+	path = install/wayland/config/sway/sway-zoomer
+	url = https://github.com/eynopv/sway-zoomer

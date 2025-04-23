@@ -224,13 +224,10 @@ bindsym $mod+r mode "resize"
 
 # Zoom screen
 mode "zoom" {
-    bindsym $down exec bash ~/.config/sway/zoomer.sh in 0.1
-    bindsym $up exec bash ~/.config/sway/zoomer.sh out 0.1
-
-    bindsym Down exec bash ~/.config/sway/zoomer.sh in 0.1
-    bindsym Up exec bash ~/.config/sway/zoomer.sh out 0.1
-
-    # Return to default mode
+    bindsym $down exec bash ~/.config/sway/sway-zoomer/sway-zoomer.sh in 0.1
+    bindsym $up exec bash ~/.config/sway/sway-zoomer/sway-zoomer.sh out 0.1
+    bindsym Down exec bash ~/.config/sway/sway-zoomer/sway-zoomer.sh in 0.1
+    bindsym Up exec bash ~/.config/sway/sway-zoomer/sway-zoomer.sh out 0.1
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
