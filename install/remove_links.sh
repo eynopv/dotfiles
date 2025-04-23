@@ -2,9 +2,6 @@
 
 echo "about to remove links"
 
-rm ~/.xinitrc
-rm ~/.xserverrc
-
 rm ~/.profile
 rm ~/.bashrc
 
