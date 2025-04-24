@@ -19,7 +19,8 @@ sudo apt-get install sway \
  xdg-desktop-portal \
  xdg-desktop-portal-wlr \
  swayidle \
- fuzzel
+ fuzzel \
+ fnott
 
 # Add permission for brightnessctl
 echo "Adding permissions"
@@ -31,6 +32,7 @@ mkdir -p ~/.config
 create_symlink $SCRIPT_DIR/config/sway ~/.config/sway
 create_symlink $SCRIPT_DIR/config/waybar ~/.config/waybar
 create_symlink $SCRIPT_DIR/config/fuzzel ~/.config/fuzzel
+create_symlink $SCRIPT_DIR/config/fnott ~/.config/fnott
 
 if ! has_block_in_zshrc "wayland"; then
   add_block_to_local_zshrc "wayland" \

@@ -16,7 +16,9 @@ sudo apt-get remove sway \
  brightnessctl \
  xdg-desktop-portal \
  xdg-desktop-portal-wlr \
- swayidle
+ swayidle \
+ fuzzel \
+ fnott
 
 echo "Removing permissions"
 sudo usermod -r -G video ${USER}
@@ -25,5 +27,7 @@ sudo usermod -r -G video ${USER}
 echo "Removing symlinks"
 remove_symlink ~/.config/sway
 remove_symlink ~/.config/waybar
+create_symlink ~/.config/fuzzel
+remove_symlink ~/.config/fnott
 
 echo "Done"
