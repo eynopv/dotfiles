@@ -14,6 +14,9 @@ if [[ $- == *i* ]]; then
     else
       echo "dotfiles: Please commit local changes..."
     fi
+
+    git -C $ZSHRC_DIR submodule update || echo "dotfiles: Unable to update submodules..."
+
     export ZSHRC_UPDATES_PULLED=1
   fi
 fi
