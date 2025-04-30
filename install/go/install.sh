@@ -17,7 +17,7 @@ echo "Installing gopls"
 
 echo "Installing golangci-lint"
 "$HOME/.local/share/go/bin/go" install github.com/nametake/golangci-lint-langserver@latest
-"$HOME/.local/share/go/bin/go" install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+"$HOME/.local/share/go/bin/go" install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
 
 if ! grep -Fq "# @go start" "$ZSHRC_LOCAL"; then
   add_block_to_local_zshrc "go" \
