@@ -37,3 +37,9 @@ echo "Setting global python $PYTHON_VERSION"
 SET_GLOBAL="$HOME/.pyenv/bin/pyenv global $PYTHON_VERSION"
 echo "$SET_GLOBAL"
 eval "$SET_GLOBAL"
+
+# Install language server
+pnpm add -g pyright
+
+echo "Installing pipx"
+sudo apt install pipx
