@@ -228,11 +228,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Zoom screen
+set $zoom_scale 0.1
+set $zoomer exec bash ~/.config/sway/sway-zoomer/sway-zoomer.sh
 mode "zoom" {
-    bindsym $down exec bash ~/.config/sway/sway-zoomer/sway-zoomer.sh in 0.1
-    bindsym $up exec bash ~/.config/sway/sway-zoomer/sway-zoomer.sh out 0.1
-    bindsym Down exec bash ~/.config/sway/sway-zoomer/sway-zoomer.sh in 0.1
-    bindsym Up exec bash ~/.config/sway/sway-zoomer/sway-zoomer.sh out 0.1
+    bindsym $down $zoomer in $zoom_scale
+    bindsym $up $zoomer out $zoom_scale
+    bindsym Down $zoomer in $zoom_scale
+    bindsym Up $zoomer out $zoom_scale
+    bindsym 1 $zoomer set 1
+    bindsym 2 $zoomer set 2
+    bindsym 3 $zoomer set 3
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
