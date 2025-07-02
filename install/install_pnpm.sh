@@ -6,7 +6,7 @@ set -eo pipefail
 # zshrc is shared with other machines
 
 curl -fsSL https://get.pnpm.io/install.sh | sh -
-~/.local/share/pnpm/pnpm env use --global lts
+~/.local/share/pnpm/pnpm env use --global 22.17
 
 # pnpm
 #export PNPM_HOME="/home/eynopv/.local/share/pnpm"
