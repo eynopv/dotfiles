@@ -1,8 +1,10 @@
 #!/bin/bash
 
+VERSION="v0.11.3"
+
 mkdir -p ~/.local/share/nvim
 
-curl -L https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-x86_64.tar.gz | tar -xz -C ~/.local/share/nvim
+curl -L "https://github.com/neovim/neovim/releases/download/$VERSION/nvim-linux-x86_64.tar.gz" | tar -xz -C ~/.local/share/nvim
 
 # plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -22,7 +24,11 @@ else
 fi
 
 # Language servers
-mkdir -p ~/.local/share/lua-ls && curl -L https://github.com/LuaLS/lua-language-server/releases/download/3.13.9/lua-language-server-3.13.9-linux-x64.tar.gz | tar -xz -C ~/.local/share/lua-ls
+LUA_LS_VERSION="3.15.0"
+rm -r ~/.local/share/lua-ls
+mkdir -p ~/.local/share/lua-ls
+curl -L "https://github.com/LuaLS/lua-language-server/releases/download/$LUA_LS_VERSION/lua-language-server-$LUA_LS_VERSION-linux-x64.tar.gz" | tar -xz -C ~/.local/share/lua-ls
+
 # Requires PNPM preinstalled
 pnpm install -g typescript typescript-language-server
 pnpm install -g vscode-langservers-extracted
