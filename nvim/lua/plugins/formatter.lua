@@ -41,6 +41,10 @@ require("formatter").setup({
 			require("formatter.filetypes.xml").xmllint,
 		},
 
+		sql = {
+			require("formatter.filetypes.sql").pgformat,
+		},
+
 		markdown = {
 			function()
 				return {
