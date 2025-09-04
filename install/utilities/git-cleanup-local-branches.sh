@@ -19,10 +19,12 @@ for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/); do
   fi
 
   last_commit_msg=$(git log -1 --pretty=format:"%s" "$branch")
+  last_commit_author=$(git log -1 --pretty=format:"%an" "$branch")
     
   echo ""
   echo "  No remote branch found: $branch"
   echo "  Last commit: $last_commit_msg"
+  echo "  Author: $last_commit_author"
   echo ""
 
   read -r -p "Delete local branch '$branch'? [y/N] " response
