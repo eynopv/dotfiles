@@ -18,7 +18,8 @@ sudo apt-get remove sway \
  xdg-desktop-portal-wlr \
  swayidle \
  fuzzel \
- fnott
+ fnott \
+ swaylock
 
 echo "Removing permissions"
 sudo usermod -r -G video ${USER}

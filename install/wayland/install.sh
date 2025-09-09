@@ -20,7 +20,8 @@ sudo apt-get install sway \
  xdg-desktop-portal-wlr \
  swayidle \
  fuzzel \
- fnott
+ fnott \
+ swaylock
 
 # Add permission for brightnessctl
 echo "Adding permissions"
