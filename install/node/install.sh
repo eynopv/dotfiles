@@ -21,13 +21,15 @@ else
   fi
 fi
 
-# Install/select Node.js version
-"$PNPM_HOME/pnpm" env use --global "$VERSION"
-
 if ! has_block_in_zshrc "$MODULE_NAME"; then
   add_block_to_local_zshrc "$MODULE_NAME" \
     'export PNPM_HOME="$HOME/.local/share/pnpm"' \
     'export PATH="$PNPM_HOME:$PATH"'
+  export PNPM_HOME="$HOME/.local/share/pnpm"
+  export PATH="$PNPM_HOME:$PATH"
 fi
+
+# Install/select Node.js version
+"$PNPM_HOME/pnpm" env use --global "$VERSION"
 
 echo "Done"
