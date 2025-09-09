@@ -25,6 +25,7 @@ sudo apt-get install sway \
 
 # Add permission for brightnessctl
 echo "Adding permissions"
+sudo usermod -a -G input ${USER}
 sudo usermod -a -G video ${USER}
 
 # Add symlinks for configs

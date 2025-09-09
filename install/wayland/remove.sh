@@ -22,6 +22,7 @@ sudo apt-get remove sway \
  swaylock
 
 echo "Removing permissions"
+sudo usermod -r -G input ${USER}
 sudo usermod -r -G video ${USER}
 
 # Remove config symlinks
