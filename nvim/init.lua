@@ -1,9 +1,8 @@
 require("plugins.plug")
-require("plugins.lspconfig")
+require("plugins.lsp")
 require("plugins.nvim-cmp")
 require("plugins.formatter")
 require("plugins.treesitter")
---require("plugins.dirvish")
 require("plugins.oil")
 require("plugins.mini_icons")
 
