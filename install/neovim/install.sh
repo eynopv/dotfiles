@@ -44,6 +44,7 @@ curl -L "https://github.com/LuaLS/lua-language-server/releases/download/$LUA_LS_
 pnpm install -g typescript typescript-language-server
 pnpm install -g vscode-langservers-extracted
 pnpm install -g @tailwindcss/language-server
+pnpm install -g prettier
 
 # Formatters
 sudo apt install -y pgformatter
