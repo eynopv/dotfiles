@@ -10,7 +10,7 @@ if [ -d "$HOME/.local/share/go" ]; then
 fi
 
 echo "Downloading go"
-curl -L https://go.dev/dl/go1.24.0.linux-amd64.tar.gz | tar -xz -C "$HOME/.local/share" || exit 1
+curl -L https://go.dev/dl/go1.25.3.linux-amd64.tar.gz | tar -xz -C "$HOME/.local/share" || exit 1
 
 echo "Installing gopls"
 "$HOME/.local/share/go/bin/go" install golang.org/x/tools/gopls@latest
