@@ -19,11 +19,13 @@ setopt CORRECT
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  if command -v neovim > /dev/null 2>&1; then
-    export EDITOR="neovim"
+  if command -v nvim > /dev/null 2>&1; then
+    export EDITOR="nvim"
   elif command -v vim > /dev/null 2>&1; then
     export EDITOR="vim"
   else
     export EDITOR="vi"
   fi
 fi
+
+export VISUAL="$EDITOR"
