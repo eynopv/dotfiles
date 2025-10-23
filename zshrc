@@ -23,10 +23,10 @@ fi
 
 sleep 1
 
-if [ -f "$ZSHRC_GLOBAL" ]; then
-  source "$ZSHRC_GLOBAL"
-fi
-
 if [ -f "$ZSHRC_LOCAL" ]; then
   source "$ZSHRC_LOCAL"
+fi
+
+if [ -f "$ZSHRC_GLOBAL" ]; then
+  source "$ZSHRC_GLOBAL"
 fi
