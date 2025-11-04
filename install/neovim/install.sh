@@ -7,7 +7,7 @@ MODULE_NAME="neovim"
 echo "Installing $MODULE_NAME"
 
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
-VERSION="v0.11.4"
+VERSION="v0.11.5"
 
 mkdir -p ~/.local/share/nvim
 
