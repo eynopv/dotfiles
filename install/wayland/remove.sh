@@ -6,7 +6,8 @@ source ../common.sh
 
 echo "Uninstalling"
 
-sudo apt-get remove sway \
+sudo apt remove \
+ sway \
  waybar \
  wl-clipboard \
  grim \
@@ -16,9 +17,12 @@ sudo apt-get remove sway \
  brightnessctl \
  xdg-desktop-portal \
  xdg-desktop-portal-wlr \
+ xdg-desktop-portal-gtk \
  swayidle \
  fuzzel \
  fnott \
+ pipewire \
+ wireplumber \
  swaylock
 
 echo "Removing permissions"

@@ -8,7 +8,8 @@ SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 
 echo "Installing"
 
-sudo apt-get install sway \
+sudo apt install \
+ sway \
  waybar \
  wl-clipboard \
  grim \
@@ -18,9 +19,12 @@ sudo apt-get install sway \
  brightnessctl \
  xdg-desktop-portal \
  xdg-desktop-portal-wlr \
+ xdg-desktop-portal-gtk \
  swayidle \
  fuzzel \
  fnott \
+ pipewire \
+ wireplumber \
  swaylock
 
 # Add permission for brightnessctl
