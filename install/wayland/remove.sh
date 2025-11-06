@@ -23,7 +23,8 @@ sudo apt remove \
  fnott \
  pipewire \
  wireplumber \
- swaylock
+ swaylock \
+ lxqt-policykit
 
 echo "Removing permissions"
 sudo usermod -r -G input ${USER}

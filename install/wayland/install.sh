@@ -25,7 +25,8 @@ sudo apt install \
  fnott \
  pipewire \
  wireplumber \
- swaylock
+ swaylock \
+ lxqt-policykit
 
 # Add permission for brightnessctl
 echo "Adding permissions"
