@@ -42,7 +42,7 @@ require("formatter").setup({
 		},
 
 		sql = {
-			require("formatter.filetypes.sql").pgformat,
+			require("formatter.filetypes.sql").sql_formatter,
 		},
 
 		markdown = {
