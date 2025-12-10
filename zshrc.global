@@ -28,6 +28,6 @@ else
   fi
 fi
 
-alias mkscript="$ZSHRC_DIR/utilities/mkscript.sh"
+alias mksh="$ZSHRC_DIR/utilities/mkscript.sh"
 
 export VISUAL="$EDITOR"
