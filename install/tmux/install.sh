@@ -21,3 +21,5 @@ if ! has_block_in_zshrc "$MODULE_NAME"; then
     ' fi' \
     'fi'
 fi
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
