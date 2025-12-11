@@ -1,20 +1,23 @@
 #!/usr/bin/env bash
 
-FILENAME="$1"
+filename="$1"
 
 create_file() {
-  echo "#!/usr/bin/env bash" > "$FILENAME"
-  chmod +x "$FILENAME"
-  "${VISUAL:-${EDITOR:-vim}}" "$FILENAME"
+  echo "#!/usr/bin/env bash" > "$filename"
+  echo "" >> "$filename"
+  echo "set -eo pipefail" >> "$filename"
+
+  chmod +x "$filename"
+  "${VISUAL:-${EDITOR:-vim}}" "$filename"
 }
 
-if [ -z "$FILENAME" ]; then
+if [ -z "$filename" ]; then
   echo "Usage: $0 <filename>"
   exit 1
 fi
 
-if [ -f "$FILENAME" ]; then
-  read -p "File $FILENAME exists. Would you like to overwrite it? [y/N] " -r
+if [ -f "$filename" ]; then
+  read -p "File $filename exists. Would you like to overwrite it? [y/N] " -r
   echo
   if [[ $REPLY == "y" || $REPLY == "y" ]]; then
     create_file
@@ -23,7 +26,7 @@ if [ -f "$FILENAME" ]; then
     exit 0
   fi
 else
-  dir="$(dirname -- "$FILENAME")"
+  dir="$(dirname -- "$filename")"
   [ "$dir" = "." ] || mkdir -p -- "$dir"
   create_file
 fi
