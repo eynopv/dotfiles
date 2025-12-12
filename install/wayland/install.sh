@@ -2,11 +2,10 @@
 
 set -eo pipefail
 
-source ../common.sh
+SCRIPT_PATH="$(realpath -- "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
 
-SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
-
-echo "Installing"
+source "$SCRIPT_DIR/../common.sh"
 
 sudo apt install \
  sway \
@@ -46,5 +45,3 @@ if ! has_block_in_zshrc "wayland"; then
     "alias sst=\"/usr/libexec/xdg-desktop-portal -r & /usr/libexec/xdg-desktop-portal-wlr -r & echo 'Screen sharing started'\"" \
     "alias ssp=\"pkill -f xdg-desktop-portal; pkill -f xdg-desktop-portal-wlr; echo 'Screen sharing stopped'\""
 fi
-
-echo "Done"

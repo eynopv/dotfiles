@@ -2,7 +2,10 @@
 
 set -eo pipefail
 
-source ../common.sh
+SCRIPT_PATH="$(realpath -- "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
+
+source "$SCRIPT_DIR/../common.sh"
 
 MODULE_NAME="node-pnpm"
 VERSION=22.17.0
@@ -31,5 +34,3 @@ fi
 
 # Install/select Node.js version
 "$PNPM_HOME/pnpm" env use --global "$VERSION"
-
-echo "Done"

@@ -2,10 +2,9 @@
 
 set -eo pipefail
 
-source ../common.sh
+SCRIPT_PATH="$(realpath -- "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
 
-echo "Uninstalling ansible"
+source "$SCRIPT_DIR/../common.sh"
 
 pipx uninstall ansible
-
-echo "Done"

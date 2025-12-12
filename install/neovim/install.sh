@@ -1,12 +1,12 @@
 #!/bin/bash
 
-source ../common.sh
+SCRIPT_PATH="$(realpath -- "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
+
+source "$SCRIPT_DIR/../common.sh"
 
 MODULE_NAME="neovim"
 
-echo "Installing $MODULE_NAME"
-
-SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 VERSION="v0.11.5"
 
 mkdir -p ~/.local/share/nvim
@@ -48,5 +48,3 @@ pnpm install -g prettier
 
 # Formatters
 sudo apt install -y pgformatter
-
-echo "Done"

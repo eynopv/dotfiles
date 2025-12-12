@@ -1,10 +1,11 @@
 #!/bin/bash
 
-source ../common.sh
+set -eo pipefail
 
-echo "Removing zig"
+SCRIPT_PATH="$(realpath -- "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
+
+source "$SCRIPT_DIR/../common.sh"
 
 rm -rf ~/.local/share/zig
 remove_block_from_local_zshrc "zig"
-
-echo "Done"

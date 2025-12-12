@@ -1,6 +1,11 @@
 #!/bin/bash
 
-source ../common.sh
+SCRIPT_PATH="$(realpath -- "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
+
+source "$SCRIPT_DIR/../common.sh"
+
+MODULE_NAME="zig"
 
 os="linux"
 arch="x86_64"
@@ -16,8 +21,6 @@ fi
 ziglink="https://ziglang.org/builds/zig-linux-$arch-$version.tar.xz"
 zlslink="https://builds.zigtools.org/zls-$os-$arch-$zls_version.tar.xz"
 
-echo "Installing zig"
-
 echo "Downloading zig"
 curl -L $ziglink | tar -xJ -C ~/.local/share || exit 1
 mv ~/.local/share/zig{-linux-x86_64-$version,}
@@ -25,10 +28,7 @@ mv ~/.local/share/zig{-linux-x86_64-$version,}
 echo "Downloading zls"
 curl -L $zlslink | tar -xJ -C ~/.local/share/zig || exit 1
 
-if ! grep -Fq "# @zig start" "$ZSHRC_LOCAL"; then
-  echo "Adding lines to local zshrc"
-  add_block_to_local_zshrc "zig" \
+if ! has_block_in_zshrc $MODULE_NAME; then
+  add_block_to_local_zshrc $MODULE_NAME \
     "export PATH=\$HOME/.local/share/zig:\$PATH"
 fi
-
-echo "Done"

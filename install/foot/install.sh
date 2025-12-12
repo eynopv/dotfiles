@@ -2,11 +2,10 @@
 
 set -eo pipefail
 
-source ../common.sh
+SCRIPT_PATH="$(realpath -- "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
 
-SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
-
-echo "Installing: foot"
+source "$SCRIPT_DIR/../common.sh"
 
 sudo apt install foot foot-themes
 

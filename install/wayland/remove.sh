@@ -2,9 +2,10 @@
 
 set -eo pipefail
 
-source ../common.sh
+SCRIPT_PATH="$(realpath -- "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
 
-echo "Uninstalling"
+source "$SCRIPT_DIR/../common.sh"
 
 sudo apt remove \
  sway \
@@ -36,5 +37,3 @@ remove_symlink ~/.config/sway
 remove_symlink ~/.config/waybar
 remove_symlink ~/.config/fuzzel
 remove_symlink ~/.config/fnott
-
-echo "Done"

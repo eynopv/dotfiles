@@ -1,8 +1,11 @@
 #!/bin/bash
 
-source ../common.sh
+set -eo pipefail
 
-echo "Installing go"
+SCRIPT_PATH="$(realpath -- "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
+
+source "$SCRIPT_DIR/../common.sh"
 
 if [ -d "$HOME/.local/share/go" ]; then
   echo "Removing old version"
@@ -24,5 +27,3 @@ if ! grep -Fq "# @go start" "$ZSHRC_LOCAL"; then
     "export PATH=\$HOME/.local/share/go/bin:\$PATH" \
     "export PATH=\$HOME/go/bin:\$PATH"
 fi
-
-echo "Done"

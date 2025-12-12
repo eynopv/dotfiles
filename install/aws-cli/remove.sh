@@ -11,5 +11,3 @@ sudo rm -rf /usr/local/aws-cli
 
 echo "Deleting settings"
 sudo rm -rf ~/.aws/
-
-echo "Done"

@@ -13,5 +13,3 @@ sudo apt update
 
 # Install the CLI
 sudo apt install stripe
-
-echo "Done"
