@@ -10,7 +10,7 @@ Plug 'mhartington/formatter.nvim'
 " Navigator
 Plug 'justinmk/vim-dirvish'
 Plug 'stevearc/oil.nvim'
-Plug 'echasnovski/mini.nvim', { 'branch': 'main' }
+Plug 'nvim-mini/mini.nvim'
 
 " Fuzzy finder
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
@@ -35,6 +35,9 @@ Plug 'hrsh7th/vim-vsnip'
 
 " Git
 Plug 'tpope/vim-fugitive'
+
+" Markdown renderer
+Plug 'MeanderingProgrammer/render-markdown.nvim'
 
 call plug#end()
 ]])
