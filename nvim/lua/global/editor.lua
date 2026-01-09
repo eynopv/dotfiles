@@ -30,3 +30,6 @@ vim.cmd.colorscheme("gruvbox")
 vim.diagnostic.config({
 	virtual_text = true,
 })
+
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us" }
