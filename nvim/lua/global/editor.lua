@@ -1,5 +1,6 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
+
 vim.opt.visualbell = true
 
 vim.opt.tabstop = 2 -- display tabs as 2 spaces
@@ -7,6 +8,12 @@ vim.opt.shiftwidth = 2 -- indent with 2 spaces
 vim.opt.softtabstop = 2 -- backspace treats 2 spaces as tab
 vim.opt.expandtab = true -- use spaces instead of tabs
 vim.opt.smartindent = false -- automatically indents new lines based on syntax (mainly for C-like languages)
+
+local undoDir = vim.fn.stdpath("state") .. "/undo"
+vim.fn.mkdir(undoDir, "p")
+vim.o.undodir = undoDir
+vim.o.undofile = true
+vim.o.swapfile = false
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
