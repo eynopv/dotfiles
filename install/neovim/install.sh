@@ -7,7 +7,7 @@ source "$SCRIPT_DIR/../common.sh"
 
 MODULE_NAME="neovim"
 
-VERSION="v0.11.5"
+VERSION="v0.11.6"
 
 mkdir -p ~/.local/share/nvim
 
