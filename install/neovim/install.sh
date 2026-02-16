@@ -43,6 +43,7 @@ curl -L "https://github.com/LuaLS/lua-language-server/releases/download/$LUA_LS_
 # Requires PNPM preinstalled
 pnpm install -g typescript typescript-language-server
 pnpm install -g vscode-langservers-extracted
+pnpm install -g svelte-language-server
 pnpm install -g @tailwindcss/language-server
 pnpm install -g prettier
 
