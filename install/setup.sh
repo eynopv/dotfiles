@@ -12,11 +12,7 @@ sudo apt-get install \
 # set login shell to zsh
 chsh -s $(which zsh)
 
-# zsh plugins
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# zsh themes
-git clone --depth=1 https://github.com/migoa/neo ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/neo
-git clone --depth=1 https://github.com/rafaelsq/nuts.zsh-theme ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/nuts
+# manual plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+git clone https://github.com/agkozak/zsh-z ~/.zsh/zsh-z
