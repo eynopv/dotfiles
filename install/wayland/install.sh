@@ -25,6 +25,7 @@ sudo apt install \
  pipewire \
  wireplumber \
  swaylock \
+ wf-recorder \
  lxqt-policykit
 
 # Add permission for brightnessctl
