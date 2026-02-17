@@ -9,6 +9,9 @@ vim.keymap.set("n", "<C-b>", ":Buffers<CR>")
 vim.keymap.set("n", "<C-j>", ":cnext<CR>")
 vim.keymap.set("n", "<C-k>", ":cprev<CR>")
 
+-- Clear search
+vim.keymap.set("n", "<BS>", "<CMD>noh<CR>")
+
 -- yank into system clipboard
 vim.keymap.set("v", "<C-y>", '"+y')
 vim.keymap.set("n", "<C-y>", '"+y')

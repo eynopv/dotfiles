@@ -1,13 +1,13 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true
 
-vim.opt.visualbell = true
+vim.o.visualbell = true
 
-vim.opt.tabstop = 2 -- display tabs as 2 spaces
-vim.opt.shiftwidth = 2 -- indent with 2 spaces
-vim.opt.softtabstop = 2 -- backspace treats 2 spaces as tab
-vim.opt.expandtab = true -- use spaces instead of tabs
-vim.opt.smartindent = false -- automatically indents new lines based on syntax (mainly for C-like languages)
+vim.o.tabstop = 2 -- display tabs as 2 spaces
+vim.o.shiftwidth = 2 -- indent with 2 spaces
+vim.o.softtabstop = 2 -- backspace treats 2 spaces as tab
+vim.o.expandtab = true -- use spaces instead of tabs
+vim.o.smartindent = false -- automatically indents new lines based on syntax (mainly for C-like languages)
 
 local undoDir = vim.fn.stdpath("state") .. "/undo"
 vim.fn.mkdir(undoDir, "p")
@@ -15,21 +15,21 @@ vim.o.undodir = undoDir
 vim.o.undofile = true
 vim.o.swapfile = false
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+vim.o.hlsearch = true
+vim.o.incsearch = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+vim.o.scrolloff = 8
+vim.o.signcolumn = "yes"
+vim.o.isfname = vim.o.isfname .. ",@-@"
 
-vim.opt.updatetime = 50
+vim.o.updatetime = 50
 
-vim.opt.wrap = true
-vim.opt.colorcolumn = "100"
+vim.o.wrap = true
+vim.o.colorcolumn = "100"
 
-vim.opt.backspace = "indent,eol,start"
+vim.o.backspace = "indent,eol,start"
 
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
 vim.cmd.colorscheme("gruvbox")
 
@@ -38,5 +38,5 @@ vim.diagnostic.config({
 	virtual_text = true,
 })
 
-vim.opt.spell = true
-vim.opt.spelllang = { "en_us" }
+vim.o.spell = true
+vim.o.spelllang = "en_us"
