@@ -49,6 +49,7 @@ alias mksh="$ZSHRC_DIR/utilities/mkscript.sh"
 alias pmi="$ZSHRC_DIR/install/pm.sh install"
 alias pmr="$ZSHRC_DIR/install/pm.sh remove"
 alias ls='ls --color=auto'
+alias grep="rg"
 
 export VISUAL="$EDITOR"
 
