@@ -51,5 +51,10 @@ alias pmr="$ZSHRC_DIR/install/pm.sh remove"
 alias ls='ls --color=auto'
 alias grep="rg"
 
+alias gws="$ZSHRC_DIR/utilities/git-worktree-setup.sh"
+alias gwa="git worktree add"
+alias gwr="git worktree remove"
+alias gwl="git worktree list"
+
 export VISUAL="$EDITOR"
 
