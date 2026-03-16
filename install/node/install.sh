@@ -8,7 +8,7 @@ SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
 source "$SCRIPT_DIR/../common.sh"
 
 MODULE_NAME="node-pnpm"
-VERSION=22.17.0
+VERSION=22.22.1
 PNPM_HOME="${PNPM_HOME:-$HOME/.local/share/pnpm}"
 
 if [ -d "$PNPM_HOME" ]; then
@@ -27,7 +27,8 @@ fi
 if ! has_block_in_zshrc "$MODULE_NAME"; then
   add_block_to_local_zshrc "$MODULE_NAME" \
     'export PNPM_HOME="$HOME/.local/share/pnpm"' \
-    'export PATH="$PNPM_HOME:$PATH"'
+    'export PATH="$PNPM_HOME:$PATH"' \
+    'alias pn=pnpm'
   export PNPM_HOME="$HOME/.local/share/pnpm"
   export PATH="$PNPM_HOME:$PATH"
 fi
