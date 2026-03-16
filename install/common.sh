@@ -34,6 +34,16 @@ has_block_in_zshrc() {
   return 1
 }
 
+upsert_block_to_zshrc() {
+  local block_name=$1
+  
+  if has_block_in_zshrc "$block_name"; then
+    remove_block_from_local_zshrc "$block_name"
+  fi
+
+  add_block_to_local_zshrc "$@"
+}
+
 create_symlink() {
   local source="$1"
   local destination="$2"

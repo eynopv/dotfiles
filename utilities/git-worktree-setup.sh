@@ -14,6 +14,7 @@ echo "gitdir: ./.bare" > .git
 # Fix remote tracking
 git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 git fetch origin
+git remote set-head origin --auto
 
 # Determine and add default branch
 default=$(git remote show origin | awk '/HEAD branch/ {print $3}')
