@@ -63,3 +63,19 @@ remove_symlink() {
     rm "$symlink"
   fi
 }
+
+sudo_validate() {
+  sudo --validate || die "Sudo authentication failed"
+}
+
+die() {
+  local message="$1"
+
+  echo $message;
+  exit 1;
+}
+
+ubuntu_codename() {
+  grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs
+}
+

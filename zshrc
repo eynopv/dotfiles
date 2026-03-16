@@ -30,4 +30,3 @@ fi
 if [ -f "$ZSHRC_LOCAL" ]; then
   source "$ZSHRC_LOCAL"
 fi
-
