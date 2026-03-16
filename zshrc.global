@@ -1,6 +1,10 @@
 # Enable colors
 autoload -U colors && colors
 
+# Load the functions into the shell environment
+autoload -Uz url-quote-magic
+autoload -Uz bracketed-paste-url-magic
+
 # History settings
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -19,6 +23,13 @@ source ~/.zsh/zsh-z/zsh-z.plugin.zsh
 # fzf integration
 source /usr/share/doc/fzf/examples/completion.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
+
+# Define 'url-quote-magic' as a widget to escape special chars in URLs automatically
+zle -N self-insert url-quote-magic
+
+# Define 'bracketed-paste-url-magic' as the handler for all pasted text
+# This prevents the terminal from executing pasted newlines immediately
+zle -N bracketed-paste bracketed-paste-url-magic
 
 # vi mode
 bindkey -v
