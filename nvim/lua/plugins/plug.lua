@@ -2,7 +2,7 @@ vim.cmd([[
 call plug#begin()
 
 " Syntax highlights
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'master' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'main' }
 
 " Formatter
 Plug 'mhartington/formatter.nvim'
