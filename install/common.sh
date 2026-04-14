@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+script_dir() {
+  echo "$(realpath -- "${1:-${BASH_SOURCE[1]}}")"
+}
+
+module_name() {
+  echo "$(basename -- "$(dirname -- "$(script_dir "${BASH_SOURCE[1]}")")")"
+}
+
 remove_block_from_local_zshrc() {
   local block_name=$1
 

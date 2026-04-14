@@ -15,10 +15,6 @@ setopt SHARE_HISTORY
 # Theme
 PROMPT='%(#.%F{red}.%F{cyan})%~%f '
 
-# fzf integration
-source /usr/share/doc/fzf/examples/completion.zsh
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-
 # Define 'url-quote-magic' as a widget to escape special chars in URLs automatically
 zle -N self-insert url-quote-magic
 
