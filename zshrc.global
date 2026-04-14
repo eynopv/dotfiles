@@ -15,11 +15,6 @@ setopt SHARE_HISTORY
 # Theme
 PROMPT='%(#.%F{red}.%F{cyan})%~%f '
 
-# Plugins
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-z/zsh-z.plugin.zsh
-
 # fzf integration
 source /usr/share/doc/fzf/examples/completion.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
