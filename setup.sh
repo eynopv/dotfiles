@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-cd "$(dirname "$0")/../"
-ls -l
+set -eo pipefail
 
 # set remote for fetch
 git remote set-url origin https://github.com/eynopv/dotfiles.git
