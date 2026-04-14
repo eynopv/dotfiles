@@ -79,3 +79,34 @@ ubuntu_codename() {
   grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs
 }
 
+readonly OS_LINUX="linux"
+readonly OS_MACOS="macos"
+readonly ARCH_X86_64="x86_64"
+readonly ARCH_ARM64="arm64"
+readonly UNKNOWN="unknown"
+
+get_os() {
+  local os=$(uname -s)
+  case "$os" in
+    Linux*) echo "$OS_LINUX" ;;
+    Darwin*) echo "$OS_MACOS" ;;
+    *) die "Unknown OS: $os"
+  esac
+}
+
+get_arch() {
+  local arch=$(uname -m)
+  case "$arch" in
+    x86_64) echo "$ARCH_X86_64" ;;
+    arm64|aarch64) echo "$ARCH_ARM64" ;;
+    *) die "Unknown architecture: $arch"
+  esac
+}
+
+is_macos() {
+  [ "$(get_os)" = "$OS_MACOS" ]
+}
+
+is_linux() {
+  [ "$(get_os)" = "$OS_LINUX" ]
+}
