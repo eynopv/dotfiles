@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -eo pipefail
 
 sudo apt-get update
 sudo apt-get install \
@@ -13,6 +15,7 @@ sudo apt-get install \
 chsh -s $(which zsh)
 
 # manual plugins
+mkdir ~/.zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 git clone https://github.com/agkozak/zsh-z ~/.zsh/zsh-z

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 remove_block_from_local_zshrc() {
   local block_name=$1
@@ -53,6 +53,8 @@ create_symlink() {
     rm -rf "$destination"
   fi
 
+  echo "Creating symlink: $1 -> $2"
+
   ln -s "$source" "$destination"
 }
 
@@ -60,6 +62,7 @@ remove_symlink() {
   local $symlink="$1"
 
   if [ -L "$symlink" ]; then
+    echo "Removing symlink: $1"
     rm "$symlink"
   fi
 }
@@ -109,4 +112,23 @@ is_macos() {
 
 is_linux() {
   [ "$(get_os)" = "$OS_LINUX" ]
+}
+
+pkg_install() {
+  local package
+  for package in "$@"; do
+    if is_macos; then
+      brew install "$package"
+    elif is_linux; then
+      sudo apt install -y "$package"
+    fi
+  done
+}
+
+pkg_update() {
+  if is_macos; then
+    brew update
+  elif is_linux; then
+    sudo apt update
+  fi
 }
