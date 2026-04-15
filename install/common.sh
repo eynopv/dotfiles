@@ -13,7 +13,11 @@ remove_block_from_local_zshrc() {
 
   echo "Removing lines from local zshrc"
 
-  sed -i "/# @$block_name start/,/# @$block_name end/d" $ZSHRC_LOCAL
+  if is_macos; then
+    sed -i '' "/# @$block_name start/,/# @$block_name end/d" "$ZSHRC_LOCAL"
+  else
+    sed -i "/# @$block_name start/,/# @$block_name end/d" "$ZSHRC_LOCAL"
+  fi
 }
 
 add_block_to_local_zshrc() {
