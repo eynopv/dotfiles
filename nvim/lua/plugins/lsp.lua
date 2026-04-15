@@ -48,6 +48,7 @@ local servers = {
 	"rust_analyzer",
 	"terraformls",
 	"tailwindcss",
+	"bashls",
 }
 
 for _, name in ipairs(servers) do

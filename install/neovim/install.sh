@@ -67,6 +67,7 @@ pnpm install -g vscode-langservers-extracted
 pnpm install -g svelte-language-server
 pnpm install -g @tailwindcss/language-server
 pnpm install -g prettier
+pnpm install -g bash-language-server
 
 # Formatters
 sudo apt install -y pgformatter
