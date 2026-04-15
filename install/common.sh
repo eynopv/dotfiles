@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+[[ -n "${_COMMON_SH_LOADED}" ]] && return
+readonly _COMMON_SH_LOADED=1
+
 script_dir() {
   echo "$(dirname -- "$(realpath -- "${1:-${BASH_SOURCE[1]}}")")"
 }
