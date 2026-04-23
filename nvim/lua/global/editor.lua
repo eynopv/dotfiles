@@ -24,7 +24,7 @@ vim.o.isfname = vim.o.isfname .. ",@-@"
 
 vim.o.updatetime = 50
 
-vim.o.wrap = true
+vim.o.wrap = false
 vim.o.colorcolumn = "100"
 
 vim.o.backspace = "indent,eol,start"
