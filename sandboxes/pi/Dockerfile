@@ -25,7 +25,7 @@ RUN bash -c "source $HOME/.nvm/nvm.sh && nvm install 24"
 RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g pnpm"
 
 # Install pi agent
-RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g @mariozechner/pi-coding-agent"
+RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g @mariozechner/pi-coding-agent@0.70.6"
 
 USER root
 COPY --chmod=0755 entrypoint.sh /usr/local/bin/entrypoint.sh
