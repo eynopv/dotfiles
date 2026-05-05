@@ -32,7 +32,16 @@ if [[ -n "$1" ]]; then
   esac
 fi
 
+workspace_dir=$(pwd)
+
+if [[ -n "$2" && -d "$2" ]]; then
+  workspace_dir="$(realpath $2)"
+fi
+
+echo "$workspace_dir"
+
 docker run --rm -it \
   -e TERM=$TERM \
-  -v "$HOME/.pi":/home/coder/.pi \
+  -v "$HOME/.pi:/home/coder/.pi" \
+  -v "$workspace_dir:/home/coder/workspace" \
   "$image"

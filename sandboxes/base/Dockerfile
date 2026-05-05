@@ -39,6 +39,10 @@ ENV PATH="$HOME/go/bin:$PATH" \
   GOPATH="$HOME/go" \
   GOROOT="$HOME/go"
 
+# Create work directory
+RUN mkdir "$HOME/workspace"
+WORKDIR "$HOME/workspace"
+
 # Setup entrypoint
 USER root
 COPY --chmod=0755 entrypoint.sh /usr/local/bin/entrypoint.sh
