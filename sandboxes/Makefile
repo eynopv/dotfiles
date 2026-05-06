@@ -1,9 +1,9 @@
-.PHONY: base all geminicli pi
+.PHONY: base all gemini pi
 
-all: geminicli pi
+all: gemini pi
 
 base:
 	docker build -t localhost/agent-base:0.1 --file base/Dockerfile .
 
-geminicli pi: base
+gemini pi: base
 	docker build -t $@ --file $@/Dockerfile .

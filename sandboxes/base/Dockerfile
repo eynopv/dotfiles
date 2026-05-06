@@ -33,7 +33,9 @@ RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g pnpm"
 RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g prettier"
 
 # Install go
-RUN curl -L https://go.dev/dl/go1.26.2.linux-amd64.tar.gz | tar -xz -C "$HOME" || exit 1
+# Detect architecture and install correct Go binary
+RUN ARCH=$(dpkg --print-architecture) && \
+    curl -L "https://go.dev/dl/go1.26.2.linux-${ARCH}.tar.gz" | tar -xz -C "$HOME" || exit 1
 RUN "$HOME/go/bin/go" install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.10.1
 ENV PATH="$HOME/go/bin:$PATH" \
   GOPATH="$HOME/go" \
