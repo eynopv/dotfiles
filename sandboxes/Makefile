@@ -1,5 +1,17 @@
+.PHONY: base all gemini pi
 
-.PHONY: gemini
+AGENT_VERSION := 0.1
+UID := $(shell id -u)
+GID := $(shell id -g)
 
-gemini:
-	docker build -t gemini-cli --network=host ./geminicli
+all: gemini pi
+
+base:
+	docker build \
+		--build-arg USER_ID=$(UID) \
+		--build-arg GROUP_ID=$(GID) \
+		-t localhost/agent-base:$(AGENT_VERSION) \
+		--file base/Dockerfile .
+
+gemini pi: base
+	docker build -t $@ --file $@/Dockerfile .
