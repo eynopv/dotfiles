@@ -1,5 +1,8 @@
 FROM debian:bookworm-slim
 
+ARG USER_ID=1000
+ARG GROUP_ID=1000
+
 RUN apt update && apt install -y \
   curl \
   wget \
@@ -15,7 +18,8 @@ RUN apt update && apt install -y \
   && rm -rf /var/lib/apt/lists/*
   
 # Create `coder` user with passwordless login
-RUN useradd -m -s /bin/bash -u 1000 coder && passwd -d coder
+RUN groupadd -g "$GROUP_ID" coder || groupmod -g "$GROUP_ID" $(getent group "$GROUP_ID" | cut -d: -f1)
+RUN useradd -m -s /bin/bash -u "$USER_ID" -g "$GROUP_ID" coder && passwd -d coder
 
 # Switch to target user and work directory
 USER coder
@@ -34,12 +38,16 @@ RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g prettier"
 
 # Install go
 # Detect architecture and install correct Go binary
+ENV GOROOT="$HOME/go-sdk"
+ENV GOPATH="$HOME/go"
+ENV GOCACHE="/tmp/.cache/go-cache"
+RUN mkdir -p "$GOROOT"
+RUN mkdir -p "$GOPATH"
+RUN mkdir -p "$GOCACHE"
+ENV PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 RUN ARCH=$(dpkg --print-architecture) && \
-    curl -L "https://go.dev/dl/go1.26.2.linux-${ARCH}.tar.gz" | tar -xz -C "$HOME" || exit 1
-RUN "$HOME/go/bin/go" install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.10.1
-ENV PATH="$HOME/go/bin:$PATH" \
-  GOPATH="$HOME/go" \
-  GOROOT="$HOME/go"
+    curl -L "https://go.dev/dl/go1.26.2.linux-${ARCH}.tar.gz" | tar -xz -C "$GOROOT" || exit 1
+RUN go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.10.1
 
 # Create work directory
 RUN mkdir "$HOME/workspace"
