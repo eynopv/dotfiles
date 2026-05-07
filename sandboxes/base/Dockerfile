@@ -37,17 +37,15 @@ RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g pnpm"
 RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g prettier"
 
 # Install go
-# Detect architecture and install correct Go binary
-ENV GOROOT="$HOME/go-sdk"
-ENV GOPATH="$HOME/go"
+ENV GOROOT="$HOME/go"
+ENV GOPATH="$HOME/go-workspace"
 ENV GOCACHE="/tmp/.cache/go-cache"
-RUN mkdir -p "$GOROOT"
-RUN mkdir -p "$GOPATH"
-RUN mkdir -p "$GOCACHE"
-ENV PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+RUN mkdir -p "$GOPATH" "$GOCACHE"
+# Detect architecture and install correct Go binary
 RUN ARCH=$(dpkg --print-architecture) && \
-    curl -L "https://go.dev/dl/go1.26.2.linux-${ARCH}.tar.gz" | tar -xz -C "$GOROOT" || exit 1
-RUN go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.10.1
+    curl -L "https://go.dev/dl/go1.26.2.linux-$ARCH.tar.gz" | tar -xz -C "$HOME"
+ENV PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+RUN go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.12.2
 
 # Create work directory
 RUN mkdir "$HOME/workspace"
