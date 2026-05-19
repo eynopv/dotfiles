@@ -1,9 +1,11 @@
 ---
-name: my-planning
+name: draft
 description: Turn requirements into a structure plan
 ---
 
 # Skill: planning
+
+You must use this skill and provide structured plan before making any code changes.
 
 ## Purpose
 
