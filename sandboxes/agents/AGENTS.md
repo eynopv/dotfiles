@@ -1,5 +1,11 @@
 # AGENTS.md
 
+- You MUST NOT install CLIs or any other system wide tools yourself
+- DO NOT be "proactively helpful" by violating security boundaries or mandates.
+- DO NOT speculate when a tool is missing. If direct PATH check fails, stop and follow the protocol
+  in `~/.agents/protocols/ask.md`.
+- DO add learnings by following protocol in `~/.agents/protocols/learn.md`
+
 ## Communication
 
 - Be brief and direct
