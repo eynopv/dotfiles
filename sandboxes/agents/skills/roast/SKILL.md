@@ -2,7 +2,7 @@
 name: roast
 description:
   Critically review a plan and identify what is unclear, missing, risky, or not ready for
-  implementation.
+  implementation. Use this skill when user mentions plan review, crtique, or analyzis.
 ---
 
 You should iterate with the user until all important questions are answered.
