@@ -3,6 +3,8 @@ FROM debian:bookworm-slim
 ARG USER_ID=1000
 ARG GROUP_ID=1000
 
+ARG PNPM_VERSION="11.4.0"
+
 RUN apt update && apt install -y \
   curl \
   wget \
@@ -31,7 +33,7 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | b
 RUN bash -c "source $HOME/.nvm/nvm.sh && nvm install 24"
 
 # Install pnpm
-RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g pnpm"
+RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g pnpm@$PNPM_VERSION"
 
 # Install prettier
 RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g prettier"
