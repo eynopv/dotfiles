@@ -3,6 +3,7 @@ FROM debian:bookworm-slim
 ARG USER_ID=1000
 ARG GROUP_ID=1000
 
+ARG GO_VERSION="1.26.3"
 ARG PNPM_VERSION="11.4.0"
 
 RUN apt update && apt install -y \
@@ -38,6 +39,9 @@ RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g pnpm@$PNPM_VERSION"
 # Install prettier
 RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g prettier"
 
+# Install playwright
+RUN bash -c "source $HOME/.nvm/nvm.sh && npx -y playwright@latest install"
+
 # Install go
 ENV GOROOT="$HOME/go"
 ENV GOPATH="$HOME/go-workspace"
@@ -45,7 +49,7 @@ ENV GOCACHE="/tmp/.cache/go-cache"
 RUN mkdir -p "$GOPATH" "$GOCACHE"
 # Detect architecture and install correct Go binary
 RUN ARCH=$(dpkg --print-architecture) && \
-    curl -L "https://go.dev/dl/go1.26.2.linux-$ARCH.tar.gz" | tar -xz -C "$HOME"
+    curl -L "https://go.dev/dl/go$GO_VERSION.linux-$ARCH.tar.gz" | tar -xz -C "$HOME"
 ENV PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 RUN go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.12.2
 
