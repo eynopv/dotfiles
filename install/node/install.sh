@@ -8,12 +8,12 @@ SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
 source "$SCRIPT_DIR/../common.sh"
 
 MODULE_NAME="node-pnpm"
-VERSION=22.22.1
+VERSION=24.16.0
 PNPM_HOME="${PNPM_HOME:-$HOME/.local/share/pnpm}"
 
 if [ -d "$PNPM_HOME" ]; then
   echo "Updating pnpm"
-  "$PNPM_HOME/pnpm" self-update
+  "$PNPM_HOME/bin/pnpm" self-update
 else
   echo "Installing pnpm"
   curl -fsSL https://get.pnpm.io/install.sh | sh -
@@ -24,14 +24,12 @@ else
   fi
 fi
 
-if ! has_block_in_zshrc "$MODULE_NAME"; then
-  add_block_to_local_zshrc "$MODULE_NAME" \
-    'export PNPM_HOME="$HOME/.local/share/pnpm"' \
-    'export PATH="$PNPM_HOME:$PATH"' \
-    'alias pn=pnpm'
-  export PNPM_HOME="$HOME/.local/share/pnpm"
-  export PATH="$PNPM_HOME:$PATH"
-fi
+upsert_block_to_zshrc "$MODULE_NAME" \
+  'export PNPM_HOME="$PNPM_HOME"' \
+  'export PATH="$PNPM_HOME:$PATH"' \
+  'alias pn=pnpm'
+export PNPM_HOME=$PNPM_HOME
+export PATH="$PNPM_HOME/bin:$PATH"
 
 # Install/select Node.js version
-"$PNPM_HOME/pnpm" env use --global "$VERSION"
+"$PNPM_HOME/bin/pnpm" runtime set node "$VERSION" -g
