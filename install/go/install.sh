@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-version=1.26.2
+version=1.26.3
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../common.sh"
 
