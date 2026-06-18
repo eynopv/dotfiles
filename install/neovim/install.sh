@@ -8,7 +8,7 @@ SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
 source "$SCRIPT_DIR/../common.sh"
 
 MODULE_NAME="neovim"
-VERSION="v0.12.1"
+VERSION="v0.12.3"
 OS=$(get_os)
 ARCH=$(get_arch)
 PACKAGE_NAME="nvim-$OS-$ARCH"
@@ -62,12 +62,14 @@ mkdir -p ~/.local/share/lua-ls
 curl -L "https://github.com/LuaLS/lua-language-server/releases/download/$LUA_LS_VERSION/$(build_lua_ls_package_name)" | tar -xz -C ~/.local/share/lua-ls
 
 # Requires PNPM preinstalled
-pnpm install -g typescript typescript-language-server
-pnpm install -g vscode-langservers-extracted
-pnpm install -g svelte-language-server
-pnpm install -g @tailwindcss/language-server
-pnpm install -g prettier
-pnpm install -g bash-language-server
+pnpm install -g \
+  typescript \
+  typescript-language-server \
+  vscode-langservers-extracted \
+  svelte-language-server \
+  @tailwindcss/language-server \
+  prettier \
+  bash-language-server
 
 # Formatters
 sudo apt install -y pgformatter
