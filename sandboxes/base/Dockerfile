@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim
+FROM debian:bookworm-20260610-slim
 
 ARG USER_ID=1000
 ARG GROUP_ID=1000
@@ -31,7 +31,7 @@ ENV HOME="/home/coder"
 
 # Install nvm and node
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
-RUN bash -c "source $HOME/.nvm/nvm.sh && nvm install 24"
+RUN bash -c "source $HOME/.nvm/nvm.sh && nvm install 22.22.3"
 
 # Install pnpm
 RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g pnpm@$PNPM_VERSION"
