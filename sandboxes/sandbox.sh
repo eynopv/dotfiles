@@ -16,15 +16,16 @@ abs_path=$(realpath "$target_dir")
 workspace_root=$(pwd)
 
 volumes=(
-  -v "$workspace_root:$coder_home/workspace"
-  -v "$HOME/.agents:$coder_home/.agents"
-  -v "$HOME/.cache/agent-docker:/tmp/.cache"
+  "-v" "$workspace_root:$coder_home/workspace"
+  "-v" "$HOME/.gitconfig:$coder_home/.gitconfig"
+  "-v" "$HOME/.agents:$coder_home/.agents"
+  "-v" "$HOME/.cache/agent-docker:/tmp/.cache"
 )
 
 envs=(
-  -e HOME="$coder_home"
-  -e TERM="$TERM"
-  -e COLORTERM=truecolor
+  "-e" "HOME=$coder_home"
+  "-e" "TERM=$TERM"
+  "-e" "COLORTERM=truecolor"
 )
 
 # 3. Worktree Logic
@@ -38,10 +39,10 @@ if [[ -f "$abs_path/.git" ]] && grep -q "gitdir" "$abs_path/.git"; then
   worktree_name=$(basename "$(sed 's/gitdir: //' "$abs_path/.git")")
   container_worktree="$coder_home/workspace/$(basename "$abs_path")"
   envs+=(
-    -e GIT_DIR="$coder_home/workspace/.bare/worktrees/$worktree_name"
-    -e GIT_COMMON_DIR="$coder_home/workspace/.bare"
-    -e GIT_WORK_TREE="$container_worktree"
-    -e GIT_CONFIG_PARAMETERS="'core.bare=false' 'safe.directory=*'"
+    "-e" "GIT_DIR=$coder_home/workspace/.bare/worktrees/$worktree_name"
+    "-e" "GIT_COMMON_DIR=$coder_home/workspace/.bare"
+    "-e" "GIT_WORK_TREE=$container_worktree"
+    "-e" "GIT_CONFIG_PARAMETERS='core.bare=false' 'safe.directory=*'"
   )
   workdir="$container_worktree"
 else
@@ -51,11 +52,13 @@ fi
 # 4. Image-Specific Logic
 case "$image" in
   pi)
-    volumes+=(-v "$HOME/.pi:$coder_home/.pi")
+    volumes+=("-v" "$HOME/.pi:$coder_home/.pi")
     ;;
   gemini)
-    volumes+=(-v "$HOME/.gemini:$coder_home/.gemini")
-    envs+=(-e GOOGLE_CLOUD_PROJECT="${GOOGLE_CLOUD_PROJECT:-}")
+    volumes+=("-v" "$HOME/.gemini:$coder_home/.gemini")
+    if [[ -n "$GOOGLE_CLOUD_PROJECT" ]]; then
+      envs+=("-e" "GOOGLE_CLOUD_PROJECT=$GOOGLE_CLOUD_PROJECT")
+    fi
     ;;
   *)
     echo "Error: Unknown image '$image'"
