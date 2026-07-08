@@ -8,7 +8,7 @@ SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
 source "$SCRIPT_DIR/../common.sh"
 
 MODULE_NAME="neovim"
-VERSION="v0.12.3"
+VERSION="v0.12.4"
 OS=$(get_os)
 ARCH=$(get_arch)
 PACKAGE_NAME="nvim-$OS-$ARCH"
