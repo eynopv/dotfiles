@@ -24,14 +24,29 @@ function gwn() {
 
 # Delete worktree and branch
 function gwd() {
+  local force=false
+  local OPTIND=1
+
+  while getopts "f" opt; do
+    case $opt in
+      f) force=true ;;
+    esac
+  done
+  shift $((OPTIND -1))
+
+  local target="$1"
+
   # Check if current directory is the one being deleted
-  if [[ "$PWD" == *"/$1" ]]; then
+  if [[ "$PWD" == *"/$target" ]]; then
     echo "Error: Cannot delete worktree while inside its directory."
     return 1
   fi
 
-  git worktree remove "$1"
-  git branch -D "$1"
+  if [[ "$force" == true ]]; then
+    git worktree remove --force --force "$target" && git branch -D "$target"
+  else
+    git worktree remove "$target" && git branch -D "$target"
+  fi
 }
 
 # Update 
