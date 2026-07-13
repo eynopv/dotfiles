@@ -6,13 +6,10 @@ description:
   for planning implementation regardless of how small.
 ---
 
-# Skill: planning
-
-This skill turns a rough feature request into a clear implementation plan.
-
-This skill does **not** implement the feature. It only plans it.
-
-Use: `./references/plan-template.md` for the new plan
+- DO NOT implement the feature, only plan it.
+- MUST strictly adhere to the structure defined in `./references/plan-template.md`.
+- DO NOT omit any sections in template.
+- DO mark sections with 'N/A' if a section is not applicable
 
 ## Step by step
 
@@ -29,3 +26,5 @@ Use: `./references/plan-template.md` for the new plan
    - Record actual technologies in use (language, DB, framework).
    - Flag files that must stay unchanged vs. be modified.
 4. **Write a concrete plan** based on what you found, not assumptions.
+5. **Verify Template Compliance.** Before presenting the plan to the user, re-read
+   `./references/plan-template.md` and ensure your draft matches every header and section.
