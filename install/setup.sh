@@ -4,6 +4,7 @@ set -eo pipefail
 
 sudo apt-get update
 sudo apt-get install \
+  sudo \
   build-essential \
   fzf \
   zsh \
