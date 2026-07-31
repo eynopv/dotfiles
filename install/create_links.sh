@@ -21,7 +21,6 @@ if [[ $use_npm -eq 1 ]]; then
 fi;
 
 ln -sf ~/dotfiles/zshrc        ~/.zshrc
-ln -sf ~/dotfiles/tmux.conf    ~/.tmux.conf
-
+ln -sf ~/dotfiles/zprofile ~/.zprofile
 
 echo "all links are created"
