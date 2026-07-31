@@ -61,7 +61,7 @@ upsert_block_to_zshrc() {
 
 create_symlink() {
   local source="$1"
-  if [[ ! -d "$source" ]]; then
+  if [[ ! -d "$source" ]] && [[ ! -f "$source" ]]; then
     echo "$source does not exist"
     exit 1
   fi
