@@ -8,8 +8,11 @@ sudo apt-get install \
   fzf \
   zsh \
   curl \
-  neofetch \
-  htop
+  htop \
+  zip \
+  unzip \
+  ripgrep \
+  fastfetch
 
 # set login shell to zsh
 chsh -s $(which zsh)
