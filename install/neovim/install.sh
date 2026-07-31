@@ -57,7 +57,7 @@ build_lua_ls_package_name() {
 
 # Language servers
 LUA_LS_VERSION="3.18.2"
-rm -r ~/.local/share/lua-ls
+rm -rf ~/.local/share/lua-ls
 mkdir -p ~/.local/share/lua-ls
 curl -L "https://github.com/LuaLS/lua-language-server/releases/download/$LUA_LS_VERSION/$(build_lua_ls_package_name)" | tar -xz -C ~/.local/share/lua-ls
 
