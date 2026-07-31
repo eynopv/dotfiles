@@ -5,7 +5,7 @@ set -eo pipefail
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../common.sh"
 
 MODULE_NAME="$(module_name)"
-VERSION="0.71.0"
+VERSION="0.74.1"
 
 build_package_name() {
   local pkg_os
