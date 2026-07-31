@@ -9,6 +9,7 @@ source "$SCRIPT_DIR/../common.sh"
 
 sudo apt install \
  sway \
+ sway-backgrounds  \
  waybar \
  wl-clipboard \
  grim \
