@@ -14,7 +14,6 @@ done
 echo "about to create links"
 
 mkdir ~/.config
-ln -sf ~/dotfiles/nvim ~/.config/nvim
 
 if [[ $use_npm -eq 1 ]]; then
   ln -sf ~/dotfiles/npmrc       ~/.npmrc

@@ -36,6 +36,9 @@ upsert_block_to_zshrc $MODULE_NAME \
   'alias vi="nvim"' \
   'alias v="nvim"'
 
+mkdir -p ~/.config
+create_symlink $SCRIPT_DIR/nvim ~/.config/nvim
+
 build_lua_ls_package_name() {
   local pkg_os
   local pkg_arch
