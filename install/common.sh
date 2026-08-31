@@ -107,6 +107,8 @@ readonly OS_MACOS="macos"
 readonly ARCH_X86_64="x86_64"
 readonly ARCH_ARM64="arm64"
 readonly UNKNOWN="unknown"
+readonly DISTRO_DEBIAN="debian"
+readonly DISTROY_UBUNTU="ubuntu"
 
 get_os() {
   local os=$(uname -s)
@@ -132,6 +134,25 @@ is_macos() {
 
 is_linux() {
   [ "$(get_os)" = "$OS_LINUX" ]
+}
+
+get_linux_distro() {
+  if [ ! -f /etc/os-release ]; then
+    echo "unknown"
+    return
+  fi
+  
+  . /etc/os-release
+  local distro_id=$(echo "$ID" | tr '[:upper:]' '[:lower:]')
+  echo "$distro_id"
+}
+
+is_debian() {
+  is_linux && [ "$(get_linux_distro)" = "$DISTRO_DEBIAN" ]
+}
+
+is_ubuntu() {
+  is_linux && [ "$(get_linux_distro)" = "$DISTRO_UBUNTU" ]
 }
 
 pkg_install() {
