@@ -27,7 +27,8 @@ sudo apt install \
  wireplumber \
  swaylock \
  wf-recorder \
- lxqt-policykit
+ lxqt-policykit \
+ wayland-utils
 
 # Add permission for brightnessctl
 echo "Adding permissions"
