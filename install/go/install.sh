@@ -14,7 +14,7 @@ if [[ -d "$HOME/.local/share/go" ]]; then
 fi
 
 echo "Downloading go"
-if [[ is_macos ]]; then
+if is_macos; then
   curl -L https://go.dev/dl/go${version}.darwin-arm64.tar.gz | tar -xz -C "$HOME/.local/share" || exit 1
 else
   curl -L https://go.dev/dl/go${version}.linux-amd64.tar.gz | tar -xz -C "$HOME/.local/share" || exit 1
