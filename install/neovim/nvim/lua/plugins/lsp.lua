@@ -39,8 +39,6 @@ local servers = {
 	"gopls",
 	"pyright",
 	"ts_ls",
-	"svelte",
-	"eslint",
 	"zls",
 	"jsonls",
 	"cssls",
