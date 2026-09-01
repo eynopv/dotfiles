@@ -1,6 +1,9 @@
 # Enable colors
 autoload -U colors && colors
 
+# Enable auto-complete
+autoload -Uz compinit && compinit
+
 # Load the functions into the shell environment
 autoload -Uz url-quote-magic
 autoload -Uz bracketed-paste-url-magic
