@@ -95,6 +95,10 @@ input type:touchpad {
     set $lockman exec bash ~/.config/sway/lockman.sh
     bindsym $mod+Ctrl+l exec $lockman
 
+# Power menu
+    set $powermenu exec bash ~/.config/sway/power-menu.sh
+    bindsym $mod+Shift+e exec $powermenu
+
 # Function keys:
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -130,7 +134,7 @@ input type:touchpad {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    #bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
