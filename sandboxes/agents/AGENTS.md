@@ -1,15 +1,15 @@
 # AGENTS.md
 
-- You MUST NOT install CLIs or any other system wide tools yourself
+- MUST NOT yap, MUST use short sentences and simple terms
+- MUST NOT install CLIs or any other system wide tools yourself
 - DO NOT be "proactively helpful" by violating security boundaries or mandates.
 - DO NOT speculate when a tool is missing. If direct PATH check fails, stop and follow the protocol
   in `~/.agents/protocols/ask.md`.
-- DO add learnings by following protocol in `~/.agents/protocols/learn.md`
+- MUST read `~/.agents/protocols/learn.md` before recording a learning to ensure strict adherence to
+  the required format and language.
 
 ## Communication
 
-- Be brief and direct
-- Use simple terms, avoid jargon
 - Explain what you do in simple phrases like "I do X because Y"
 - No lengthy thinking or reasoning out loud
 - For non-breaking decisions make a reasonable call and explain it
@@ -22,11 +22,15 @@
 
 ## Code Style
 
+- MUST NOT use `any` in new code; use `unknown` or specific types instead.
 - Prefer simple solutions over complex ones
 - Keep functions short and focused
 - Use early returns to avoid nesting
 - Follow DRY and SOLID principles
 - Add comments only when something is genuinely non-obvious
+- MUST extract complex or long chained conditional expressions in `if` statements into descriptive, intermediate boolean variables.
+- DO define nested parameters or metadata objects as optional in GraphQL schemas if they can be missing in the database.
+- MUST NOT return arbitrary or incorrect fallback values for missing database metadata; return nil/omit instead.
 
 ## Testing
 
