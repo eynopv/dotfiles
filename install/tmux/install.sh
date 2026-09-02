@@ -2,12 +2,10 @@
 
 set -eo pipefail
 
-SCRIPT_PATH="$(realpath -- "${BASH_SOURCE[0]}")"
-SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../common.sh"
 
-source "$SCRIPT_DIR/../common.sh"
-
-MODULE_NAME="tmux"
+SCRIPT_DIR=$(script_dir)
+MODULE_NAME=$(module_name)
 
 pkg_update
 pkg_install tmux
@@ -25,4 +23,4 @@ upsert_block_to_zshrc "$MODULE_NAME" \
   'fi'
 
 
-create_symlink $SCRIPT_DIR/tmux.conf ~/.tmux.conf
+create_symlink $SCRIPT_DIR/tmux.conf $HOME/.tmux.conf
