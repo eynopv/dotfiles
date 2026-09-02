@@ -43,6 +43,6 @@ For each finding, use:
 
 - **Issue:** what is wrong or risky
 - **Why it matters:** expected impact
-- **Practical fix:** practical fix or recommeded action
+- **Practical fix:** practical fix or recommeded action, possible code snippet
 - **Location:** file, function, or line of code
 ```
