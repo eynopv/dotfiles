@@ -1,8 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -euo pipefail
+set -eo pipefail
 
-FONT_DIR="$HOME/.local/share/fonts"
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../common.sh"
+
+if [[ is_macos ]]; then
+    FONT_DIR="$HOME/Library/Fonts"
+    echo "Running on macOS. Target: $FONT_DIR"
+else
+    FONT_DIR="$HOME/.local/share/fonts"
+    echo "Running on Linux. Target: $FONT_DIR"
+fi
+
 URLS=(
   "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip"
   "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hack.zip"
@@ -12,7 +21,7 @@ URLS=(
 mkdir -p "$FONT_DIR"
 
 for URL in "${URLS[@]}"; do
-  TMP=$(mktemp -d)
+  TMP=$(mktemp -d 2>/dev/null || mktemp -d -t 'fonttmp')
 
   echo "Downloading $URL"
   curl -L "$URL" -o "$TMP/archive.zip"
@@ -22,13 +31,17 @@ for URL in "${URLS[@]}"; do
 
   echo "Installing..."
   find "$TMP/unpacked" -type f \( -iname "*.ttf" -o -iname "*.otf" \) \
-    -exec mv -v {} "$FONT_DIR" \;
+    -exec cp -v {} "$FONT_DIR" \;
 
-  rm -rf $TMP
+  rm -rf "$TMP"
 done
 
 echo ""
-echo "Updating font cache..."
-fc-cache -f "$FONT_DIR"
 
-echo "All fonts installed"
+if [[ is_macos ]]; then
+    echo "Fonts installed! macOS will index them automatically."
+else
+    echo "Updating font cache..."
+    fc-cache -f "$FONT_DIR"
+    echo "All fonts installed."
+fi
