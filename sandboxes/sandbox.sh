@@ -49,7 +49,12 @@ else
   workdir="$coder_home/workspace"
 fi
 
-# 4. Image-Specific Logic
+# 4. Add anonymous node_modules volume to avoid host node_modules conflicts
+if [[ -f "$target_dir/package.json" ]]; then
+  volumes+=("-v" "$workdir/node_modules")
+fi
+
+# 5. Image-Specific Logic
 case "$image" in
   pi)
     volumes+=("-v" "$HOME/.pi:$coder_home/.pi")
@@ -66,9 +71,10 @@ case "$image" in
     ;;
 esac
 
-# 5. Execute
+# 6. Execute
 docker run --rm -it \
-  --user "$(id -u):$(id -g)" \
+  -e HOST_UID="$(id -u)" \
+  -e HOST_GID="$(id -g)" \
   --network=host \
   -w "$workdir" \
   "${envs[@]}" \

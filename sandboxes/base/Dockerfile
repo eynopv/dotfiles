@@ -60,5 +60,4 @@ WORKDIR "$HOME/workspace"
 # Setup entrypoint
 USER root
 COPY --chmod=0755 entrypoint.sh /usr/local/bin/entrypoint.sh
-USER coder
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
