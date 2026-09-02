@@ -57,22 +57,3 @@ build_lua_ls_package_name() {
 
   echo "lua-language-server-$LUA_LS_VERSION-$pkg_os-$pkg_arch.tar.gz"
 }
-
-# Language servers
-LUA_LS_VERSION="3.18.2"
-rm -rf ~/.local/share/lua-ls
-mkdir -p ~/.local/share/lua-ls
-curl -L "https://github.com/LuaLS/lua-language-server/releases/download/$LUA_LS_VERSION/$(build_lua_ls_package_name)" | tar -xz -C ~/.local/share/lua-ls
-
-# Requires PNPM preinstalled
-pnpm install -g \
-  typescript \
-  typescript-language-server \
-  vscode-langservers-extracted \
-  svelte-language-server \
-  @tailwindcss/language-server \
-  prettier \
-  bash-language-server
-
-# Formatters
-sudo apt install -y pgformatter
