@@ -7,6 +7,11 @@ SCRIPT_DIR="$(dirname -- "$SCRIPT_PATH")"
 
 source "$SCRIPT_DIR/../common.sh"
 
+if [[ is_mac ]]; then
+  brew install --cask docker
+  exit 0
+fi
+
 sudo apt update
 sudo apt install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
