@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-version=1.26.3
+version=1.27.1
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../common.sh"
 
@@ -25,7 +25,7 @@ echo "Installing gopls"
 
 echo "Installing golangci-lint"
 "$HOME/.local/share/go/bin/go" install github.com/nametake/golangci-lint-langserver@latest
-"$HOME/.local/share/go/bin/go" install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.10.1
+"$HOME/.local/share/go/bin/go" install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.13.2
 
 upsert_block_to_zshrc "$MODULE_NAME" \
   "export PATH=\$HOME/.local/share/go/bin:\$PATH" \
