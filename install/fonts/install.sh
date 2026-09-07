@@ -2,19 +2,21 @@
 
 set -eo pipefail
 
+sudo -v || exit 1
+
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../common.sh"
 
-if [[ is_macos ]]; then
-    FONT_DIR="$HOME/Library/Fonts"
-    echo "Running on macOS. Target: $FONT_DIR"
+if is_macos; then
+  FONT_DIR="$HOME/Library/Fonts"
+  echo "Running on macOS. Target: $FONT_DIR"
 else
-    FONT_DIR="$HOME/.local/share/fonts"
-    echo "Running on Linux. Target: $FONT_DIR"
+  FONT_DIR="$HOME/.local/share/fonts"
+  echo "Running on Linux. Target: $FONT_DIR"
 fi
 
 URLS=(
-  "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip"
-  "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hack.zip"
+  "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Meslo.zip"
+  "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Hack.zip"
   "https://use.fontawesome.com/releases/v7.1.0/fontawesome-free-7.1.0-desktop.zip"
 )
 
@@ -38,10 +40,13 @@ done
 
 echo ""
 
-if [[ is_macos ]]; then
-    echo "Fonts installed! macOS will index them automatically."
+if is_macos; then
+  echo "Fonts installed! macOS will index them automatically."
 else
-    echo "Updating font cache..."
-    fc-cache -f "$FONT_DIR"
-    echo "All fonts installed."
+  echo "Installing emoji font"
+  sudo apt install fonts-noto-color-emoji
+
+  echo "Updating font cache..."
+  fc-cache -f "$FONT_DIR" -v
+  echo "All fonts installed."
 fi
