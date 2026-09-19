@@ -105,12 +105,16 @@ input type:touchpad {
     bindsym $mod+Shift+e exec $powermenu
 
 # Function keys:
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+    set $sound exec bash ~/.config/sway/sound.sh
+    bindsym XF86AudioRaiseVolume $sound sink +5%
+    bindsym XF86AudioLowerVolume $sound sink -5%
+    bindsym XF86AudioMute $sound sink toggle
+    bindsym XF86AudioMicMute $sound source toggle
+
+    set $brightness exec bash ~/.config/sway/brightness.sh
+    bindsym XF86MonBrightnessDown $brightness "5%-"
+    bindsym XF86MonBrightnessUp $brightness "5%+"
+
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous

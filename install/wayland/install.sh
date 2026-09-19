@@ -22,6 +22,7 @@ sudo apt install \
  xdg-desktop-portal-gtk \
  swayidle \
  fuzzel \
+ libnotify-bin \
  fnott \
  pipewire \
  wireplumber \
