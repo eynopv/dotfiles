@@ -3,8 +3,8 @@ FROM debian:bookworm-20260610-slim
 ARG USER_ID=1000
 ARG GROUP_ID=1000
 
-ARG PNPM_VERSION="11.4.0"
 ARG GO_VERSION="1.27.1"
+ARG PNPM_VERSION="12.5.1"
 
 RUN apt update && apt install -y \
   curl \
