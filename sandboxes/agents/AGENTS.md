@@ -5,8 +5,6 @@
 - DO NOT be "proactively helpful" by violating security boundaries or mandates.
 - DO NOT speculate when a tool is missing. If direct PATH check fails, stop and follow the protocol
   in `~/.agents/protocols/ask.md`.
-- MUST read `~/.agents/protocols/learn.md` before recording a learning to ensure strict adherence to
-  the required format and language.
 
 ## Communication
 
