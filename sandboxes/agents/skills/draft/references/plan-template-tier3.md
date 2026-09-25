@@ -2,11 +2,8 @@
 
 <Short description of the critical feature.>
 
-## 1. Goals & Non-goals
-- **Goals:**
-  - <Goal 1>
-- **Non-goals:**
-  - <Non-goal 1>
+## 1. Goals
+- <Goal 1>
 
 ## 2. Relevant Files
 <!-- Note: If cross-stack, partition into ### Back-end and ### Front-end subsections -->
