@@ -5,6 +5,10 @@
 - DO NOT be "proactively helpful" by violating security boundaries or mandates.
 - DO NOT speculate when a tool is missing. If direct PATH check fails, stop and follow the protocol
   in `~/.agents/protocols/ask.md`.
+- MUST read and follow `~/.agents/protocols/memory.md` before recording any memory, learning,
+  technical decision, or plan. MUST NOT write plans or learnings to the workspace root or other
+  unstructured directories; always place them under the `memories/` directory as structured by the
+  protocol.
 
 ## Communication
 
