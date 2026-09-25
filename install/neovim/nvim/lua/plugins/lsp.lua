@@ -38,7 +38,7 @@ local servers = {
 	"golangci_lint_ls",
 	"gopls",
 	"pyright",
-	"tsc",
+	"ts_ls",
 	"zls",
 	"jsonls",
 	"cssls",
