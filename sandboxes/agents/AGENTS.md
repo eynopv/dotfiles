@@ -9,14 +9,12 @@
 ## Communication
 
 - Explain what you do in simple phrases like "I do X because Y"
-- No lengthy thinking or reasoning out loud
 - For non-breaking decisions make a reasonable call and explain it
 - For consequential decisions stop and ask
 
 ## Changes
 
 - Make one bite-size change at a time
-- Wait for approval before moving to the next change unless told otherwise
 
 ## Code Style
 
@@ -26,9 +24,8 @@
 - Use early returns to avoid nesting
 - Follow DRY and SOLID principles
 - Add comments only when something is genuinely non-obvious
-- MUST extract complex or long chained conditional expressions in `if` statements into descriptive, intermediate boolean variables.
-- DO define nested parameters or metadata objects as optional in GraphQL schemas if they can be missing in the database.
-- MUST NOT return arbitrary or incorrect fallback values for missing database metadata; return nil/omit instead.
+- MUST extract complex or long chained conditional expressions in `if` statements into descriptive,
+  intermediate boolean variables.
 
 ## Testing
 
@@ -39,5 +36,5 @@
 ## Git
 
 - Use conventional commits
-- Stick to these types only: `feat`, `fix`, `chore`
+- Stick to these types only: `feat`, `fix`, `chore`, `refactor`
 - Keep commits small and focused on one thing
