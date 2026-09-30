@@ -10,7 +10,7 @@ MODULE_NAME=$(module_name)
 if is_linux; then
   echo "LINUX"
   tlink="https://github.com/tmux/tmux-builds/releases/download/v3.7c/tmux-3.7c-linux-x86_64.tar.gz"
-  curl -L "$tmux_link" | tar -xz -C ~/.local/bin/
+  curl -L "$tlink" | tar -xz -C ~/.local/bin/
 else
   pkg_update
   pkg_install tmux
