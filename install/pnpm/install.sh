@@ -5,7 +5,7 @@ set -eo pipefail
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../common.sh"
 
 MODULE_NAME=$(module_name)
-VERSION=22.22.3
+VERSION=24.21.0
 pnpm_home="${PNPM_HOME}"
 
 if [[ -d "$pnpm_home" ]]; then
