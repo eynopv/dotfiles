@@ -51,7 +51,7 @@ RUN mkdir -p "$GOPATH" "$GOCACHE"
 RUN ARCH=$(dpkg --print-architecture) && \
     curl -L "https://go.dev/dl/go$GO_VERSION.linux-$ARCH.tar.gz" | tar -xz -C "$HOME"
 ENV PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
-RUN go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.12.2
+RUN go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.14.0
 
 # Create work directory
 RUN mkdir "$HOME/workspace"
