@@ -31,7 +31,7 @@ ENV HOME="/home/coder"
 
 # Install nvm and node
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
-RUN bash -c "source $HOME/.nvm/nvm.sh && nvm install 22.22.3"
+RUN bash -c "source $HOME/.nvm/nvm.sh && nvm install 24.21.0"
 
 # Install pnpm
 RUN bash -c "source $HOME/.nvm/nvm.sh && npm install -g pnpm@$PNPM_VERSION"
