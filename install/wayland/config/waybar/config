@@ -3,7 +3,7 @@
     "spacing": 4,
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "battery"],
+    "modules-right": ["tray", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "custom/battery"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -102,24 +102,12 @@
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": {
-          "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-          "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
-        }
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
+    "custom/battery": {
+      "exec": "~/.config/waybar/scripts/battery.py",
+      "return-type": "json",
+      "interval": 15,
+      "format": "{text}",
+      "tooltip": true
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface

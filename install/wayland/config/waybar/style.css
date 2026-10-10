@@ -54,7 +54,7 @@ tooltip label {
 #memory,
 #temperature,
 #backlight,
-#battery {
+#custom-battery {
   padding: 0 8px;
   margin: 0 6px;
 }
@@ -76,11 +76,13 @@ tooltip label {
   box-shadow: inset 0 -2px #c85064;
 }
 
-#battery {
+#battery,
+#custom-battery {
   box-shadow: inset 0 -2px #50c878;
 }
 
-#battery.charging {
+#battery.charging,
+#custom-battery.charging {
   box-shadow: inset 0 -2px #5064c8;
 }
 
@@ -88,10 +90,12 @@ tooltip label {
   box-shadow: inset 0 -2px #50a0c8 !important;
 }
 
-#battery.warning:not(.charging):not(.plugged) {
+#battery.warning:not(.charging):not(.plugged),
+#custom-battery.warning:not(.charging) {
   box-shadow: inset 0 -2px #c8b450;
 }
 
-#battery.critical:not(.chraging):not(.plugged) {
+#battery.critical:not(.chraging):not(.plugged),
+#custom-battery.critical:not(.charging) {
   box-shadow: inset 0 -2px #c85064;
 }
