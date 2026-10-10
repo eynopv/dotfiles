@@ -76,6 +76,7 @@ docker run --rm -it \
   -e HOST_UID="$(id -u)" \
   -e HOST_GID="$(id -g)" \
   --network=host \
+  --add-host=host.docker.internal:host-gateway \
   -w "$workdir" \
   "${envs[@]}" \
   "${volumes[@]}" \
