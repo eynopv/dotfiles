@@ -13,7 +13,10 @@ sudo apt-get install \
   zip \
   unzip \
   ripgrep \
-  fastfetch
+  fastfetch \
+  network-manager
+
+sudo systemctl enable --now NetworkManager
 
 # set login shell to zsh
 chsh -s $(which zsh)
