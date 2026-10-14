@@ -25,6 +25,7 @@ description:
   - **High:** likely production bugs, severe performance regressions, or serious maintainability issues.
   - **Medium:** meaningful design, scalability, reliability, or structural code quality concerns.
   - **Low:** minor improvements or optional refinements.
+- **MUST** assign each finding a unique sequential ID (e.g. `ISSUE-1`, `ISSUE-2`) in the header so it can be easily referenced in conversation.
 - **MUST** explain exactly why each identified issue matters in a real-world scenario.
 - **MUST** provide a practical, clean, and concise code solution or structural recommendation for each finding.
 - **MUST NOT** suggest over-engineered or excessively complex patterns when a simpler, idiomatic solution achieves the goal.
@@ -49,7 +50,7 @@ Briefly describe the overall quality of the code and the most critical architect
 
 For each finding, use:
 
-### [Severity] Short title
+### [ISSUE-1] [Severity] Short title
 
 - **Issue:** what is wrong or risky
 - **Why it matters:** expected real-world impact
