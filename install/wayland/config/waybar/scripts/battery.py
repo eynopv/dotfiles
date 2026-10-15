@@ -109,6 +109,8 @@ if empty_seconds:
     tooltip_lines.append(f"Time to empty: {format_duration(empty_seconds)}")
 elif full_seconds:
     tooltip_lines.append(f"Time to full: {format_duration(full_seconds)}")
+else:
+    tooltip_lines.append("Not charging")
 
 print(json.dumps({
     "text": f"{combined}% {icon}",
